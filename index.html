@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiel & Mary — Mediterranean Honeymoon 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F4EE;
+    --warm-white: #FDFCF9;
+    --ink: #1A1714;
+    --ink-mid: #4A4540;
+    --ink-light: #8A847C;
+    --gold: #B8956A;
+    --gold-light: #E8D5B7;
+    --gold-pale: #F5ECD8;
+    --sea: #3A6B7A;
+    --sea-light: #E8F2F5;
+    --rose: #A85C5C;
+    --rose-light: #F5E8E8;
+    --sage: #5C7A5C;
+    --sage-light: #E8F2E8;
+    --amber: #8A6A2A;
+    --amber-light: #F5EDD8;
+    --border: rgba(26,23,20,0.1);
+    --border-gold: rgba(184,149,106,0.3);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 64px 40px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(184,149,106,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(58,107,122,0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .hero-title em { font-style: italic; color: var(--gold); }
+  .hero-dates {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(247,244,238,0.6);
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    border-top: 0.5px solid rgba(247,244,238,0.15);
+    border-bottom: 0.5px solid rgba(247,244,238,0.15);
+    padding: 24px 0;
+    margin-top: 8px;
+  }
+  .hero-stat {
+    padding: 8px 32px;
+    border-right: 0.5px solid rgba(247,244,238,0.15);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.5);
+  }
+
+  /* COUNTDOWN */
+  .countdown {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .countdown-block {
+    padding: 12px 24px;
+    text-align: center;
+    border-right: 0.5px solid rgba(184,149,106,0.2);
+  }
+  .countdown-block:last-child { border-right: none; }
+  .countdown-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .countdown-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.4);
+  }
+  .countdown-departed {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold);
+    padding: 16px 0 4px;
+  }
+
+  /* RESTAURANT CARDS */
+  .rest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  @media (max-width: 560px) { .rest-grid { grid-template-columns: 1fr; } }
+  .rest-card { background: var(--cream); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 12px; }
+  .rest-card.highlight { border-color: var(--border-gold); background: #FDFBF6; }
+  .rest-name { font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .rest-tag { font-size: 10px; font-weight: 500; padding: 1px 7px; border-radius: 999px; display: inline-block; margin-bottom: 5px; }
+  .tag-lunch  { background: var(--sea-light); color: var(--sea); }
+  .tag-dinner { background: #EEEDF8; color: #4A4898; }
+  .tag-bfast  { background: var(--sage-light); color: var(--sage); }
+  .tag-wine   { background: #FBE8F0; color: #883355; }
+  .rest-desc { color: var(--ink-mid); line-height: 1.4; }
+  .rest-addr { color: var(--ink-light); font-size: 11px; margin-top: 3px; }
+
+  /* WALKING TOUR STOPS */
+  .walk-stop { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 0.5px solid var(--border); font-size: 13px; }
+  .walk-stop:last-child { border-bottom: none; }
+  .walk-num { width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+  .walk-content { flex: 1; }
+  .walk-name { font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .walk-note { color: var(--ink-mid); font-size: 12px; line-height: 1.4; }
+  .walk-dist { font-size: 11px; color: var(--ink-light); margin-top: 2px; }
+
+  /* TRANSPORT BLOCKS */
+  .transport-block { background: var(--cream); border: 0.5px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-top: 10px; }
+  .transport-title { font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .transport-option { display: flex; gap: 10px; padding: 7px 0; border-bottom: 0.5px solid var(--border); font-size: 12px; align-items: flex-start; }
+  .transport-option:last-child { border-bottom: none; }
+  .to-badge { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
+  .to-best  { background: var(--sage-light); color: var(--sage); }
+  .to-fast  { background: var(--sea-light); color: var(--sea); }
+  .to-cheap { background: var(--amber-light); color: var(--amber); }
+  .to-text  { flex: 1; color: var(--ink-mid); line-height: 1.4; }
+  .to-text strong { color: var(--ink); font-weight: 500; }
+
+  /* FLIGHT LEGS */
+  .flight-leg { background: var(--cream); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; border: 0.5px solid var(--border); }
+  .flight-leg:last-of-type { margin-bottom: 0; }
+  .flight-leg-header { font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .flight-leg-num { font-size: 10px; background: var(--sea-light); color: var(--sea); padding: 2px 7px; border-radius: 999px; font-weight: 500; }
+  .flight-row { display: flex; gap: 8px; font-size: 12px; color: var(--ink-mid); margin-bottom: 3px; }
+  .flight-row:last-child { margin-bottom: 0; }
+  .flight-key { min-width: 60px; color: var(--ink-light); flex-shrink: 0; }
+
+  /* BOOKING REF */
+  .booking-ref { background: var(--cream); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 12px; }
+  .booking-ref-title { font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+  .booking-ref-row { display: flex; gap: 8px; margin-bottom: 4px; color: var(--ink-mid); }
+  .booking-ref-row:last-child { margin-bottom: 0; }
+  .booking-ref-key { min-width: 140px; color: var(--ink-light); flex-shrink: 0; }
+
+  /* CONFIRMED BLOCK */
+  .confirmed-block { background: var(--sage-light); border: 0.5px solid rgba(92,122,92,0.25); border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 12px; color: var(--sage); }
+  .confirmed-block strong { font-weight: 500; display: block; margin-bottom: 4px; }
+  .confirmed-row { display: flex; gap: 8px; margin-bottom: 3px; }
+  .confirmed-row:last-child { margin-bottom: 0; }
+  .confirmed-key { min-width: 100px; opacity: 0.7; flex-shrink: 0; }
+
+  /* DOC CHECKLIST */
+  .doc-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+  @media (max-width: 560px) { .doc-checklist { grid-template-columns: 1fr; } }
+  .doc-item { background: var(--cream); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 12px; display: flex; gap: 10px; align-items: flex-start; }
+  .doc-item.required { border-color: rgba(168,92,92,0.3); background: var(--rose-light); }
+  .doc-item.done-item { border-color: rgba(92,122,92,0.3); background: var(--sage-light); }
+  .doc-badge { font-size: 10px; font-weight: 500; padding: 1px 6px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
+  .doc-badge-req   { background: var(--rose); color: #fff; }
+  .doc-badge-print { background: var(--amber); color: #fff; }
+  .doc-badge-bring { background: var(--sea); color: #fff; }
+  .doc-badge-done  { background: var(--sage); color: #fff; }
+  .doc-text strong { font-weight: 500; display: block; margin-bottom: 2px; }
+  .doc-text span { color: var(--ink-mid); font-size: 11px; }
+  .doc-item.done-item .doc-text span { color: var(--sage); }
+
+  /* LUGGAGE TAG */
+  .luggage-tag-wrap { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin: 12px 0; }
+  .luggage-tag { background: #fff; border: 2px solid var(--ink); border-radius: 8px; width: 160px; flex-shrink: 0; overflow: hidden; font-family: monospace; text-align: center; }
+  .tag-header { background: #5C3A8A; color: #fff; padding: 6px 10px; font-size: 10px; letter-spacing: 0.08em; font-family: 'DM Sans', sans-serif; }
+  .tag-ship { font-size: 16px; font-weight: 700; color: var(--ink); padding: 6px 10px 2px; letter-spacing: 0.05em; }
+  .tag-date { font-size: 11px; color: var(--ink-mid); padding: 0 10px 4px; }
+  .tag-divider { height: 0.5px; background: var(--border); margin: 0 10px; }
+  .tag-deck-label { font-size: 9px; color: var(--ink-light); padding: 4px 10px 0; font-family: 'DM Sans', sans-serif; letter-spacing: 0.06em; }
+  .tag-deck { font-size: 36px; font-weight: 700; color: var(--ink); padding: 0 10px; line-height: 1.1; }
+  .tag-room-label { font-size: 9px; color: var(--ink-light); padding: 0 10px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.06em; }
+  .tag-room { font-size: 20px; font-weight: 700; color: var(--ink); padding: 0 10px 8px; }
+  .tag-footer { background: var(--cream); padding: 4px 10px 6px; font-size: 9px; color: var(--ink-light); font-family: 'DM Sans', sans-serif; }
+  .tag-instructions { flex: 1; min-width: 220px; }
+  .tag-instructions ol { padding-left: 18px; font-size: 12px; color: var(--ink-mid); line-height: 1.7; }
+  .tag-instructions li { margin-bottom: 2px; }
+  .tag-instructions strong { font-weight: 500; color: var(--ink); }
+
+  /* TIP BREAKDOWN */
+  .tip-breakdown { margin-top: 8px; padding: 10px 12px; background: var(--amber-light); border-radius: 8px; font-size: 12px; color: var(--amber); line-height: 1.9; }
+  .tip-breakdown-total { margin-top: 6px; padding-top: 6px; border-top: 0.5px solid rgba(138,106,42,0.25); font-weight: 500; }
+
+  /* INFO PANELS */
+  .info-panel { background: var(--warm-white); border: 0.5px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-bottom: 10px; }
+  .info-panel h3 { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .info-panel p { font-size: 12px; color: var(--ink-mid); line-height: 1.6; margin-bottom: 6px; }
+  .info-panel p:last-child { margin-bottom: 0; }
+  .info-panel strong { font-weight: 500; color: var(--ink); }
+  .info-panel em { font-style: italic; }
+
+  /* SUBHEAD */
+  .subhead { font-size: 12px; font-weight: 500; color: var(--ink); margin: 14px 0 6px; padding-bottom: 5px; border-bottom: 0.5px solid var(--border); }
+
+  /* CALLOUT PINK */
+  .callout-tip-pink { background: #FBE8F0; color: #883355; border: 0.5px solid rgba(136,51,85,0.2); }
+
+  /* ACTION DOT VARIANTS */
+  .dot-info { background: var(--sea-light); color: var(--sea); }
+
+  /* CELEBRATION */
+  .celebrate-msg {
+    animation: celebFadeIn 1.2s ease forwards;
+    padding: 20px 0 8px;
+  }
+  @keyframes celebFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .celebrate-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 58px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .celebrate-sub {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(247,244,238,0.65);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .celebrate-hearts {
+    font-size: 22px;
+    letter-spacing: 8px;
+    animation: heartPulse 1.4s ease-in-out infinite alternate;
+  }
+  @keyframes heartPulse {
+    from { opacity: 0.7; transform: scale(1); }
+    to   { opacity: 1;   transform: scale(1.12); }
+  }
+
+  /* STICKY NAV */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(26,23,20,0.95);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  .top-nav a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.6);
+    text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 0.5px solid rgba(247,244,238,0.12);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .top-nav a:hover { color: var(--gold); border-color: rgba(184,149,106,0.4); }
+
+  /* DOCUMENTS SECTION */
+  .doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .doc-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .doc-card:hover { box-shadow: 0 4px 20px rgba(26,23,20,0.08); border-color: var(--border-gold); }
+  .doc-card-top { display: flex; align-items: flex-start; gap: 12px; }
+  .doc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .doc-icon-cruise  { background: #EEEDF8; }
+  .doc-icon-excursion { background: var(--amber-light); }
+  .doc-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+  .doc-meta { font-size: 11px; color: var(--ink-light); line-height: 1.5; }
+  .doc-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    align-self: flex-start;
+  }
+  .doc-tag-cruise     { background: #EEEDF8; color: #4A4898; }
+  .doc-tag-excursion  { background: var(--amber-light); color: var(--amber); }
+  .doc-open {
+    font-size: 11px;
+    color: var(--ink-light);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-top: 0.5px solid var(--border);
+    padding-top: 10px;
+    margin-top: 2px;
+  }
+
+  /* SETSAIL PASSES */
+  .setsail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .setsail-card {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .setsail-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(184,149,106,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .setsail-rc {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .setsail-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .setsail-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 6px;
+    margin-bottom: 14px;
+  }
+  .setsail-field-label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.4);
+    margin-bottom: 1px;
+  }
+  .setsail-field-val {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cream);
+  }
+  .setsail-board {
+    font-size: 11px;
+    color: rgba(247,244,238,0.5);
+    border-top: 0.5px solid rgba(247,244,238,0.1);
+    padding-top: 10px;
+  }
+  .setsail-board strong { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .setsail-grid { grid-template-columns: 1fr; }
+    .doc-grid { grid-template-columns: 1fr; }
+  }
+
+  /* MAIN LAYOUT */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* SECTION LABELS */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 0 16px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  /* DAY CARDS */
+  .day-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .day-card:hover { box-shadow: 0 4px 24px rgba(26,23,20,0.06); }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .day-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .icon-flight  { background: #E8F2F5; color: var(--sea); }
+  .icon-hotel   { background: var(--sage-light); color: var(--sage); }
+  .icon-sea     { background: var(--sea-light); color: var(--sea); }
+  .icon-port    { background: #EEEDF8; color: #4A4898; }
+  .icon-shore   { background: var(--amber-light); color: var(--amber); }
+
+  .day-text { flex: 1; min-width: 0; }
+  .day-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .day-sub {
+    font-size: 12px;
+    color: var(--ink-light);
+  }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .badge-confirmed  { background: var(--sage-light); color: var(--sage); }
+  .badge-excursion  { background: var(--amber-light); color: var(--amber); }
+  .badge-port       { background: #EEEDF8; color: #4A4898; }
+
+  .chevron {
+    color: var(--ink-light);
+    font-size: 18px;
+    transition: transform 0.25s;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .day-card.open .chevron { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    border-top: 0.5px solid var(--border);
+    padding: 14px 18px;
+  }
+  .day-card.open .day-body { display: block; }
+
+  .detail-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 7px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 13px;
+  }
+  .detail-row:last-of-type { border-bottom: none; }
+  .detail-icon { color: var(--ink-light); flex-shrink: 0; width: 16px; margin-top: 2px; }
+  .detail-label {
+    color: var(--ink-light);
+    min-width: 96px;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+  .detail-val { color: var(--ink); flex: 1; }
+
+  /* CALLOUT BOXES */
+  .callout {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .callout-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .callout-warn { background: var(--rose-light); color: var(--rose); border: 0.5px solid rgba(168,92,92,0.25); }
+  .callout-info { background: var(--sea-light); color: var(--sea); border: 0.5px solid rgba(58,107,122,0.25); }
+  .callout-tip  { background: var(--amber-light); color: var(--amber); border: 0.5px solid rgba(138,106,42,0.25); }
+  .callout-ok   { background: var(--sage-light); color: var(--sage); border: 0.5px solid rgba(92,122,92,0.25); }
+
+  /* DAY NOTES */
+  .day-notes {
+    margin-top: 12px;
+    border-top: 0.5px solid var(--border);
+    padding-top: 12px;
+  }
+  .day-notes-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .day-notes-label span { opacity: 0.5; font-size: 12px; }
+  .day-notes textarea {
+    width: 100%;
+    min-height: 64px;
+    border: 0.5px solid var(--border-gold);
+    border-radius: 8px;
+    background: var(--gold-pale);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 8px 10px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .day-notes textarea:focus { border-color: var(--gold); }
+  .day-notes textarea::placeholder { color: var(--ink-light); }
+  .notes-saved {
+    font-size: 11px;
+    color: var(--sage);
+    margin-top: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .notes-saved.visible { opacity: 1; }
+
+  /* ACTION ITEMS */
+  .actions-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 20px 20px 4px;
+    margin-top: 4px;
+  }
+  .action-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 13px;
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+  .dot-urgent { background: var(--rose-light); color: var(--rose); font-weight: 500; }
+  .dot-done   { background: var(--sage-light); color: var(--sage); }
+  .action-text { flex: 1; }
+  .action-text strong { font-weight: 500; }
+
+  /* PACKING CHECKLIST */
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .pack-category {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .pack-cat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 0.5px solid var(--border);
+    cursor: pointer;
+  }
+  .pack-cat-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pack-cat-icon { font-size: 14px; }
+  .pack-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pack-progress-bar {
+    width: 48px;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .pack-progress-fill {
+    height: 100%;
+    background: var(--sage);
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+  .pack-count {
+    font-size: 11px;
+    color: var(--ink-light);
+    white-space: nowrap;
+  }
+  .pack-items {
+    padding: 8px 0;
+  }
+  .pack-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  .pack-item:hover { background: var(--cream); }
+  .pack-item input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--border-gold);
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.15s;
+  }
+  .pack-item input[type="checkbox"]:checked {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+  .pack-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 7px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+  .pack-item-label {
+    font-size: 13px;
+    color: var(--ink);
+    flex: 1;
+    transition: color 0.15s;
+  }
+  .pack-item.checked .pack-item-label {
+    color: var(--ink-light);
+    text-decoration: line-through;
+    text-decoration-color: var(--sage);
+  }
+  .pack-urgent-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--rose);
+    flex-shrink: 0;
+  }
+  .pack-total-bar {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .pack-total-text {
+    font-size: 13px;
+    color: var(--ink-mid);
+    flex: 1;
+  }
+  .pack-total-text strong { color: var(--ink); }
+  .pack-total-progress {
+    width: 120px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .pack-total-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sea), var(--sage));
+    border-radius: 2px;
+    transition: width 0.4s;
+  }
+  .pack-reset-btn {
+    font-size: 11px;
+    color: var(--ink-light);
+    background: none;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .pack-reset-btn:hover { border-color: var(--rose); color: var(--rose); }
+
+  /* CRUISE SHIP CARD */
+  .ship-card {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .ship-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(184,149,106,0.15);
+    border: 0.5px solid rgba(184,149,106,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .ship-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+  .ship-details { font-size: 12px; color: rgba(247,244,238,0.55); }
+  .ship-meta {
+    margin-left: auto;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .ship-meta-val { font-size: 13px; color: var(--cream); font-weight: 500; }
+  .ship-meta-label { font-size: 11px; color: rgba(247,244,238,0.45); }
+
+  /* DIVIDER */
+  .gold-divider {
+    height: 0.5px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 8px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 0.5px solid var(--border);
+    font-size: 11px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+  footer em { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); }
+
+  /* PRINT */
+  @media print {
+    .day-body { display: block !important; }
+    .chevron { display: none; }
+    .countdown, .pack-grid, .pack-total-bar, .day-notes { display: none !important; }
+    body { background: white; }
+    .hero { background: #1A1714; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 36px; }
+    .hero-stat { padding: 8px 16px; }
+    .hero-stat-val { font-size: 22px; }
+    .detail-label { min-width: 72px; }
+    .countdown-val { font-size: 36px; }
+    .countdown-block { padding: 8px 16px; }
+    .pack-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="#docs">📄 Documents</a>
+  <a href="#before">✅ Before You Go</a>
+  <a href="#packing">🎒 Packing</a>
+  <a href="#rome">🏛 Rome</a>
+  <a href="#cruise">⚓ Cruise</a>
+  <a href="#contacts">📞 Contacts</a>
+  <a href="#phone">📱 Phone</a>
+  <a href="#vat">💶 VAT</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Mediterranean Honeymoon · June 2026</p>
+  <h1 class="hero-title">Kiel <em>&</em> Mary</h1>
+  <p class="hero-dates">June 4 – 15, 2026 &nbsp;·&nbsp; Phoenix → Rome → Greek Isles → Naples → Rome → Phoenix</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-val">12</span>
+      <span class="hero-stat-label">Days</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">4</span>
+      <span class="hero-stat-label">Countries</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">5</span>
+      <span class="hero-stat-label">Ports</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">2</span>
+      <span class="hero-stat-label">Excursions</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">7</span>
+      <span class="hero-stat-label">Nights at sea</span>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown" id="countdown">
+    <div class="countdown-block">
+      <span class="countdown-val" id="cd-days">--</span>
+      <span class="countdown-label">Days</span>
+    </div>
+    <div class="countdown-block">
+      <span class="countdown-val" id="cd-hours">--</span>
+      <span class="countdown-label">Hours</span>
+    </div>
+    <div class="countdown-block">
+      <span class="countdown-val" id="cd-mins">--</span>
+      <span class="countdown-label">Minutes</span>
+    </div>
+    <div class="countdown-block">
+      <span class="countdown-val" id="cd-secs">--</span>
+      <span class="countdown-label">Seconds</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- DOCUMENTS -->
+  <p class="section-label" id="docs">Documents</p>
+
+  <div class="setsail-grid">
+    <div class="setsail-card">
+      <div class="setsail-rc">⚓ Royal Caribbean · SetSail Pass</div>
+      <div class="setsail-name">Kiel<br>Revenew</div>
+      <div class="setsail-fields">
+        <div>
+          <div class="setsail-field-label">Deck</div>
+          <div class="setsail-field-val">6</div>
+        </div>
+        <div>
+          <div class="setsail-field-label">Stateroom</div>
+          <div class="setsail-field-val">6308</div>
+        </div>
+        <div>
+          <div class="setsail-field-label">Muster</div>
+          <div class="setsail-field-val">E2</div>
+        </div>
+        <div>
+          <div class="setsail-field-label">Reservation</div>
+          <div class="setsail-field-val">7906901</div>
+        </div>
+      </div>
+      <div class="setsail-board">Board by <strong>1:30 PM · Jun 07</strong> · Rome (Civitavecchia)</div>
+    </div>
+    <div class="setsail-card">
+      <div class="setsail-rc">⚓ Royal Caribbean · SetSail Pass</div>
+      <div class="setsail-name">Mary<br>Welch</div>
+      <div class="setsail-fields">
+        <div>
+          <div class="setsail-field-label">Deck</div>
+          <div class="setsail-field-val">6</div>
+        </div>
+        <div>
+          <div class="setsail-field-label">Stateroom</div>
+          <div class="setsail-field-val">6308</div>
+        </div>
+        <div>
+          <div class="setsail-field-label">Muster</div>
+          <div class="setsail-field-val">E2</div>
+        </div>
+        <div>
+          <div class="setsail-field-label">Reservation</div>
+          <div class="setsail-field-val">7906901</div>
+        </div>
+      </div>
+      <div class="setsail-board">Board by <strong>1:30 PM · Jun 07</strong> · Rome (Civitavecchia)</div>
+    </div>
+  </div>
+
+  <div class="doc-grid">
+    <a class="doc-card" href="CruiseDocuments.pdf" target="_blank">
+      <div class="doc-card-top">
+        <div class="doc-icon doc-icon-cruise">🚢</div>
+        <div>
+          <div class="doc-title">Cruise Documents</div>
+          <div class="doc-meta">SetSail Passes · Kiel Revenew & Mary Welch<br>Reservation #7906901 · Jun 7–14</div>
+        </div>
+      </div>
+      <span class="doc-tag doc-tag-cruise">Royal Caribbean</span>
+      <div class="doc-open">📂 Open PDF</div>
+    </a>
+    <a class="doc-card" href="ephesus-excursion.pdf" target="_blank">
+      <div class="doc-card-top">
+        <div class="doc-icon doc-icon-excursion">🏛</div>
+        <div>
+          <div class="doc-title">Ephesus & Sirince Excursion</div>
+          <div class="doc-meta">Kusadasi, Turkey · Jun 10<br>Departs 10:30 AM · $140.99/adult</div>
+        </div>
+      </div>
+      <span class="doc-tag doc-tag-excursion">Shore Excursion</span>
+      <div class="doc-open">📂 Open PDF</div>
+    </a>
+    <a class="doc-card" href="pompeii-excursion.pdf" target="_blank">
+      <div class="doc-card-top">
+        <div class="doc-icon doc-icon-excursion">🏺</div>
+        <div>
+          <div class="doc-title">Glimpse of Pompeii</div>
+          <div class="doc-meta">Naples, Italy · Jun 13<br>Departs 8:30 AM · $125.99/adult</div>
+        </div>
+      </div>
+      <span class="doc-tag doc-tag-excursion">Shore Excursion</span>
+      <div class="doc-open">📂 Open PDF</div>
+    </a>
+  </div>
+
+  <!-- BOARDING DOCUMENTS -->
+  <div class="day-card open" id="boarding-docs" style="margin-top:4px">
+    <div class="day-header" onclick="toggle('boarding-docs')">
+      <div class="day-icon" style="background:var(--rose-light);color:var(--rose)">📋</div>
+      <div class="day-text">
+        <div class="day-title">Documents required to board — June 7</div>
+        <div class="day-sub">Have all on your person at the pier · Never pack in checked luggage</div>
+      </div>
+      <span class="badge" style="background:var(--rose-light);color:var(--rose)">Required</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="doc-checklist">
+        <div class="doc-item done-item">
+          <span class="doc-badge doc-badge-done">DONE ✓</span>
+          <div class="doc-text"><strong>Valid passports</strong><span>Both confirmed valid well beyond Dec 2026. Carry on your person — never in checked bags.</span></div>
+        </div>
+        <div class="doc-item done-item">
+          <span class="doc-badge doc-badge-done">DONE ✓</span>
+          <div class="doc-text"><strong>SetSail Pass</strong><span>Online check-in complete. Print one per person and bring to the pier.</span></div>
+        </div>
+        <div class="doc-item required">
+          <span class="doc-badge doc-badge-req">REQUIRED</span>
+          <div class="doc-text"><strong>Turkey e-Visa</strong><span>Obtain at evisa.gov.tr. Print or save to phone. Required for Jun 10 Kusadasi stop.</span></div>
+        </div>
+        <div class="doc-item required">
+          <span class="doc-badge doc-badge-print">PRINT</span>
+          <div class="doc-text"><strong>Colosseo tickets</strong><span>Booking #OCO3989330 — PDF in ticketcolosseo.com email. Bring photo ID matching booking name.</span></div>
+        </div>
+        <div class="doc-item">
+          <span class="doc-badge doc-badge-bring">BRING</span>
+          <div class="doc-text"><strong>Cruise confirmation</strong><span>Reservation #7906901. On your phone or printed.</span></div>
+        </div>
+        <div class="doc-item">
+          <span class="doc-badge doc-badge-bring">BRING</span>
+          <div class="doc-text"><strong>Airline confirmations</strong><span>Air Canada CP3SHV · Delta GTASLX.</span></div>
+        </div>
+        <div class="doc-item">
+          <span class="doc-badge doc-badge-bring">BRING</span>
+          <div class="doc-text"><strong>Credit card for SeaPass</strong><span>To register your onboard account at check-in.</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;padding-top:14px;border-top:0.5px solid var(--border)">
+        <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px">Luggage tags — print and attach before leaving home</div>
+        <div style="font-size:12px;color:var(--ink-mid);margin-bottom:14px">One tag per bag. Template in the last pages of your Cruise Documents PDF.</div>
+        <div class="luggage-tag-wrap">
+          <div class="luggage-tag">
+            <div class="tag-header">ROYAL CARIBBEAN</div>
+            <div class="tag-ship">ODYSSEY</div>
+            <div class="tag-date">07JUN26 · SUN-ROM</div>
+            <div class="tag-divider"></div>
+            <div class="tag-deck-label">DECK</div>
+            <div class="tag-deck">6</div>
+            <div class="tag-room-label">STATEROOM</div>
+            <div class="tag-room">308</div>
+            <div class="tag-footer">Write your name on the tag before attaching</div>
+          </div>
+          <div class="tag-instructions">
+            <ol>
+              <li><strong>Print</strong> from the last pages of your Cruise Documents PDF — one per bag.</li>
+              <li><strong>Write your name</strong> in the "Guest Name" field on each tag.</li>
+              <li><strong>Fold — do not cut</strong> along the dotted lines, ship name facing out.</li>
+              <li><strong>Staple twice or tape</strong> the tag securely around each bag handle.</li>
+              <li>Do not pack passports, documents, or valuables in tagged bags — they go to a porter and may take hours to reach your stateroom.</li>
+            </ol>
+            <div class="callout callout-warn" style="margin-top:10px">
+              <span class="callout-icon">⚠</span>
+              Without proper tags your bags will not be delivered to your stateroom. Attach them before leaving home.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEFORE YOU GO -->
+  <p class="section-label" id="before">Before you leave Phoenix</p>
+
+  <div class="actions-card">
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Passports</strong> — Both confirmed valid through December 2026.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Royal Caribbean online check-in</strong> — Completed. SetSail Passes in Documents section above.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Ephesus & Sirince excursion</strong> — RESERVED · $140.99/adult · Jun 10, 10:30 AM</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Glimpse of Pompeii excursion</strong> — RESERVED · $125.99/adult · Jun 13, 8:30 AM</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Monti Palace Hotel, Rome</strong> — Confirmed · Jun 5–7 · Booking #24794LF16902</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Lido di Ostia hotel</strong> — Confirmed · Jun 14–15 · Booking #8478396626</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-done">✓</div>
+      <div class="action-text"><strong>Flights (both directions)</strong> — Air Canada CP3SHV (outbound) · Delta GTASLX (return)</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text"><strong>Turkey e-Visa</strong> — Required for Jun 10 Kusadasi/Ephesus stop. Apply at <strong>evisa.gov.tr</strong> — ~5 min, ~$35 each. Print or save to phone. Royal Caribbean will not let you off the ship without it.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text"><strong>Print & attach luggage tags</strong> — Template in last pages of Cruise Documents PDF. Print one per bag, write your name, fold (do not cut), staple around handle. Stateroom 308 / Deck 6 / ODYSSEY / 07JUN26</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text"><strong>Pack non-slip, closed-toe walking shoes</strong> — Required for both Ephesus (extremely slippery marble) and Pompeii. One pair covers both days. No sandals or heels.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text">
+        <strong>Withdraw euros — ~€200–250 in small bills</strong>
+        <div class="tip-breakdown">
+          €10–15 &nbsp;·&nbsp; Airport transfer driver (FCO, Jun 5)<br>
+          €10–15 &nbsp;·&nbsp; Monti Palace bellhop<br>
+          €10 &nbsp;·&nbsp; Monti Palace housekeeping (2 nights)<br>
+          €20–30 &nbsp;·&nbsp; Rome restaurants (Jun 5–6, ~15–20% in cash)<br>
+          €15–20 &nbsp;·&nbsp; Ephesus excursion guide & coach driver (Jun 10)<br>
+          €15–20 &nbsp;·&nbsp; Pompeii excursion guide & coach driver (Jun 13)<br>
+          €10–15 &nbsp;·&nbsp; Port taxis — Santorini, Mykonos, Naples<br>
+          €10 &nbsp;·&nbsp; Lido di Ostia bellhop & housekeeping<br>
+          €20–25 &nbsp;·&nbsp; Ostia dinner<br>
+          <div class="tip-breakdown-total">Total: ~€120–160 minimum · €200–250 recommended with buffer</div>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text"><strong>T-Mobile international setup</strong> — Confirm your plan covers Italy, Greece & Turkey. Enable Wi-Fi Calling on both phones. Download offline Google Maps for Rome, Santorini, Mykonos, Kusadasi, and Naples. On the ship: turn cellular roaming OFF — use ship Wi-Fi only.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text">
+        <strong>Prep Mom for cat care — June 4–15</strong>
+        <div class="tip-breakdown" style="background:var(--sea-light);color:var(--sea);border-radius:6px;margin-top:6px">
+          □ &nbsp;House key + alarm/garage code<br>
+          □ &nbsp;Feeding schedule written out<br>
+          □ &nbsp;Show where food, litter, and supplies are stored<br>
+          □ &nbsp;Confirm enough litter & food for 11 days<br>
+          □ &nbsp;Any medications — doses, schedule, location<br>
+          □ &nbsp;Vet info — name, address, phone number<br>
+          □ &nbsp;Your best contact number while traveling<br>
+          □ &nbsp;Backup neighbor contact<br>
+          □ &nbsp;Where the cats hide so she doesn't panic<br>
+          □ &nbsp;Any quirks — indoor/outdoor rules, skittishness, favorite spots
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-urgent">!</div>
+      <div class="action-text"><strong>Print Parco archeologico del Colosseo tickets</strong> — Booking #OCO3989330. PDF in your ticketcolosseo.com confirmation email. Bring a photo ID matching the booking name — entry denied without it.</div>
+    </div>
+  </div>
+
+  <!-- PACKING CHECKLIST -->
+  <p class="section-label" id="packing">Packing checklist</p>
+
+  <div class="pack-total-bar">
+    <div class="pack-total-text">
+      <strong id="pack-done-count">0</strong> of <strong id="pack-total-count">0</strong> items packed
+    </div>
+    <div class="pack-total-progress">
+      <div class="pack-total-fill" id="pack-total-fill" style="width:0%"></div>
+    </div>
+    <button class="pack-reset-btn" onclick="resetPacking()">Reset all</button>
+  </div>
+
+  <div class="pack-grid" id="pack-grid"></div>
+
+  <!-- MARY'S PACKING LIST -->
+  <p class="section-label">Mary's packing list</p>
+  <div class="day-card open" id="c-mary-pack">
+    <div class="day-header" onclick="toggle('c-mary-pack')">
+      <div class="day-icon icon-hotel">🧳</div>
+      <div class="day-text">
+        <div class="day-title">Mary's packing list — 11 days</div>
+        <div class="day-sub">Mediterranean summer · 2 nights Rome · 7 nights cruise · 1 night Ostia</div>
+      </div>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        <strong>Cruise laundry tip:</strong> Royal Caribbean has self-service laundromats on board (small fee) and a full laundry service. No need to pack 11 days of outfits — plan to do a wash mid-cruise and pack light. Checked bag + carry-on is plenty.
+      </div>
+
+      <p class="subhead">Documents & essentials</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;Passport (valid, stored in carry-on — never checked bag)<br>
+        ☐ &nbsp;Turkey e-Visa (printed or saved to phone)<br>
+        ☐ &nbsp;Printed Parco archeologico tickets — booking #OCO3989330<br>
+        ☐ &nbsp;Cruise SetSail Pass (printed after online check-in)<br>
+        ☐ &nbsp;Travel insurance card / policy number<br>
+        ☐ &nbsp;Credit card + some USD cash for airport<br>
+        ☐ &nbsp;Copy of all booking confirmations (on phone is fine)
+      </div>
+
+      <p class="subhead">Clothing — Rome (Jun 5–6) · warm, walkable</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;2–3 lightweight daytime outfits (linen, cotton — June in Rome is hot, 80s°F)<br>
+        ☐ &nbsp;1 nicer outfit for Trastevere dinner Saturday night<br>
+        ☐ &nbsp;Comfortable walking sandals for casual days<br>
+        ☐ &nbsp;<strong>Non-slip, closed-toe walking shoes</strong> — required for Ephesus AND Pompeii excursions<br>
+        ☐ &nbsp;Light cardigan or layer (churches, evening walks)<br>
+        ☐ &nbsp;Shawl or scarf — <strong>required for shoulders at Turkish cultural sites (Ephesus)</strong>; doubles as church cover-up in Rome
+      </div>
+
+      <p class="subhead">Clothing — cruise (Jun 7–14) · 7 nights</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;3–4 casual daytime outfits (sundresses, shorts, tops — plan to re-wear and do laundry)<br>
+        ☐ &nbsp;2 swimsuit options (pool + beach days: Santorini, Mykonos)<br>
+        ☐ &nbsp;Swimsuit cover-up / sarong<br>
+        ☐ &nbsp;2 evening outfits for dinner (My Time Dining — smart casual; some nights may be "formal optional")<br>
+        ☐ &nbsp;1 dressier outfit for a special dinner or formal night<br>
+        ☐ &nbsp;Lightweight cardigan / wrap for over-air-conditioned dining rooms<br>
+        ☐ &nbsp;Comfortable walking shoes for port days<br>
+        ☐ &nbsp;Sandals / flip flops for pool deck<br>
+        ☐ &nbsp;A small day bag or backpack for port days (not a large backpack — Pompeii prohibits them inside)
+      </div>
+
+      <p class="subhead">Toiletries & health</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;<strong>Reef-safe, mineral-based sunscreen</strong> — oxybenzone &amp; octinoxate banned at several ports; pack enough for 7 port/excursion days<br>
+        ☐ &nbsp;After-sun lotion / aloe<br>
+        ☐ &nbsp;Prescription medications (in original containers, carry-on only)<br>
+        ☐ &nbsp;Motion sickness medication if prone (open-water sea days Jun 8 &amp; Jun 12)<br>
+        ☐ &nbsp;Lip balm with SPF<br>
+        ☐ &nbsp;Basic first aid — pain reliever, blister pads (Rome is a lot of walking), antidiarrheal<br>
+        ☐ &nbsp;Hand sanitizer &amp; wipes<br>
+        ☐ &nbsp;Feminine hygiene products (availability varies in ports)<br>
+        ☐ &nbsp;Razors, toiletry basics (3-1-1 rule for carry-on liquids)<br>
+        ☐ &nbsp;The ship provides shampoo, conditioner, body wash — no need to pack full sizes
+      </div>
+
+      <p class="subhead">Sun & outdoor</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;Wide-brim hat or sun hat — Pompeii and Ephesus have almost no shade<br>
+        ☐ &nbsp;Sunglasses (polarized recommended for sea glare)<br>
+        ☐ &nbsp;Reusable water bottle — refillable throughout; heat in southern Italy in June is intense
+      </div>
+
+      <p class="subhead">Electronics & travel</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;Phone + charger<br>
+        ☐ &nbsp;Universal power adapter (Italy uses Type F/L plugs — same as most of Europe)<br>
+        ☐ &nbsp;Portable battery / power bank for long port days<br>
+        ☐ &nbsp;Earbuds or headphones (overnight flights, sea days)<br>
+        ☐ &nbsp;Camera if you use one separately from your phone<br>
+        ☐ &nbsp;Small crossbody bag for sightseeing — keeps hands free and harder to pickpocket than a shoulder bag
+      </div>
+
+      <p class="subhead">Nice-to-haves</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        ☐ &nbsp;A light, packable rain layer — rare in June but possible<br>
+        ☐ &nbsp;Compression socks for the overnight flights (PHX→Montreal→Rome is ~13 hrs total)<br>
+        ☐ &nbsp;Eye mask &amp; ear plugs for the overnight flight<br>
+        ☐ &nbsp;Small travel umbrella<br>
+        ☐ &nbsp;Ziplock bags — always useful for wet swimsuits, snacks, organizing<br>
+        ☐ &nbsp;A nice outfit for the last night in Ostia — dinner by the beach, final night of the honeymoon
+      </div>
+
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        <strong>Don't forget the shawl.</strong> It's on the list twice because it's easy to forget and genuinely required at Ephesus on June 10. Pack it in your day bag for that excursion, not buried in a suitcase.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRE-CRUISE -->
+  <p class="section-label" id="rome">Pre-cruise · Rome</p>
+
+  <!-- Day 1 -->
+  <div class="day-card open" id="c-d1">
+    <div class="day-header" onclick="toggle('c-d1')">
+      <div class="day-icon icon-flight">✈</div>
+      <div class="day-text">
+        <div class="day-title">Thursday, June 4 — Departure (Phoenix)</div>
+        <div class="day-sub">PHX → Montreal YUL → Rome FCO · overnight flight</div>
+      </div>
+      <span class="badge badge-confirmed">Confirmed</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="flight-leg">
+        <div class="flight-leg-header"><span class="flight-leg-num">Leg 1 of 2</span> Air Canada AC 1730 — operated by Air Canada Rouge</div>
+        <div class="flight-row"><span class="flight-key">Departs</span><span class="flight-val">Phoenix Sky Harbor (PHX) at <strong>7:55 AM</strong></span></div>
+        <div class="flight-row"><span class="flight-key">Arrives</span><span class="flight-val">Montreal Pierre Elliott Trudeau (YUL) at <strong>3:39 PM</strong></span></div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-header"><span class="flight-leg-num">Leg 2 of 2</span> Air Canada AC 0892</div>
+        <div class="flight-row"><span class="flight-key">Departs</span><span class="flight-val">Montreal (YUL) at <strong>7:10 PM</strong></span></div>
+        <div class="flight-row"><span class="flight-key">Arrives</span><span class="flight-val">Rome Fiumicino (FCO) at <strong>9:15 AM</strong> — Friday Jun 5</span></div>
+      </div>
+      <div class="booking-ref">
+        <div class="booking-ref-title">Air Canada booking reference</div>
+        <div class="booking-ref-row"><span class="booking-ref-key">Confirmation code</span><span>CP3SHV (also ITCWHV — same booking, two codes)</span></div>
+        <div class="booking-ref-row"><span class="booking-ref-key">Kiel's e-ticket</span><span>7434744536</span></div>
+        <div class="booking-ref-row"><span class="booking-ref-key">Mary's e-ticket</span><span>7434744537</span></div>
+      </div>
+      <div class="callout callout-warn" style="margin-top:12px">
+        <span class="callout-icon">⚠</span>
+        Long travel day — depart PHX 7:55 AM, overnight Montreal→Rome. Plan to sleep on the second leg. Arrive Rome next morning.
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        Contact Air Canada 72 hrs before departure to reconfirm. Verify seat assignments and baggage allowances in advance.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d1" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d1">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card open" id="c-d2">
+    <div class="day-header" onclick="toggle('c-d2')">
+      <div class="day-icon icon-hotel">🏛</div>
+      <div class="day-text">
+        <div class="day-title">Friday, June 5 — Arrive Rome · Monti Palace Hotel</div>
+        <div class="day-sub">Prepaid airport transfer · Check in · Lunch · Explore Monti</div>
+      </div>
+      <span class="badge badge-confirmed">Confirmed</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="detail-row">
+        <span class="detail-icon">✈</span>
+        <span class="detail-label">Arrive</span>
+        <span class="detail-val">Rome Fiumicino (FCO) at <strong>9:15 AM</strong></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🚗</span>
+        <span class="detail-label">Your driver</span>
+        <span class="detail-val">Arranged & prepaid by Monti Palace Hotel · Look for a sign reading <strong>REVENEW</strong> outside arrivals · Do NOT take a different taxi</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">📞</span>
+        <span class="detail-label">Driver trouble?</span>
+        <span class="detail-val">Call Monti Palace: <strong>+39 06 480231</strong> · Your number on file: +1 602 284 8619</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🏨</span>
+        <span class="detail-label">Hotel</span>
+        <span class="detail-val">Monti Palace Hotel · Via Cavour 185, Roma 00184 · Booking #24794LF16902</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">💶</span>
+        <span class="detail-label">Cost</span>
+        <span class="detail-val">€666 prepaid (non-refundable) + €30 city tax at check-in · €7.50/person/night</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">☕</span>
+        <span class="detail-label">Included</span>
+        <span class="detail-val">Free rooftop breakfast both mornings — Jun 5 & Jun 6</span>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">★</span>
+        <strong>Early bag check:</strong> You arrive ~9:15 AM but check-in is typically 2–3 PM. Ask the front desk to hold your bags — they almost always will. Have ~€25–30 ready for tips (driver €10–15, bellhop €10–15).
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        NON-REFUNDABLE booking. Dates, names, and price cannot be changed.
+      </div>
+      <p class="subhead">Lunch near the hotel — arrive hungry, Monti delivers</p>
+      <div class="rest-grid">
+        <div class="rest-card highlight">
+          <div class="rest-name">La Taverna dei Fori Imperiali</div>
+          <span class="rest-tag tag-lunch">Lunch</span>
+          <div class="rest-desc">One of Monti's most celebrated trattorias, steps from the Roman Forum. Outstanding cacio e pepe and carbonara. Reservation recommended even for lunch.</div>
+          <div class="rest-addr">Via della Madonna dei Monti, 9 · ~5 min walk</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Enoteca Cavour 313</div>
+          <span class="rest-tag tag-lunch">Lunch</span>
+          <div class="rest-desc">Historic wine bar literally next door to the hotel. Excellent small plates, Roman classics, great wine list. Perfect for a relaxed first meal. Open Tue–Sat from noon.</div>
+          <div class="rest-addr">Via Cavour, 313 · 2 min walk</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Pasta Chef (al42 Street Food)</div>
+          <span class="rest-tag tag-lunch">Casual</span>
+          <div class="rest-desc">Low-key, excellent pasta at great prices — one of the best amatriciana and carbonara spots in the neighborhood. Perfect for a tired arrival day.</div>
+          <div class="rest-addr">Via Baccina, 42 · 8 min walk</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">La Bottega del Caffè</div>
+          <span class="rest-tag tag-wine">Aperitivo</span>
+          <div class="rest-desc">Vine-covered café overlooking Piazza della Madonna dei Monti. Perfect for a late afternoon aperitivo to decompress after the flight. Very atmospheric.</div>
+          <div class="rest-addr">Piazza della Madonna dei Monti · 8 min walk</div>
+        </div>
+      </div>
+      <div class="callout callout-tip" style="margin-top:10px">
+        <span class="callout-icon">★</span>
+        Keep it easy today — you'll be exhausted from the overnight flight. Monti is great to wander: cobblestone alleys, vintage boutiques, gelato. Stroll to the <strong>Colosseum exterior</strong> for your first look (no tickets needed), grab gelato at <strong>Fatamorgana</strong> on Via Baccina. Save the full Colosseum visit for Saturday.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d2" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d2">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card" id="c-d3">
+    <div class="day-header" onclick="toggle('c-d3')">
+      <div class="day-icon icon-hotel">🗺</div>
+      <div class="day-text">
+        <div class="day-title">Saturday, June 6 — Rome walking day</div>
+        <div class="day-sub">Colosseum · Forum · Pantheon · Trevi Fountain · Trastevere dinner</div>
+      </div>
+      <span class="badge badge-port">Full day</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <p class="subhead">Breakfast</p>
+      <div class="rest-grid">
+        <div class="rest-card highlight">
+          <div class="rest-name">Bar La Licata</div>
+          <span class="rest-tag tag-bfast">Breakfast</span>
+          <div class="rest-desc">Monti's go-to morning café with Colosseum views from the terrace. Famous for pistachio cornetti. Classic cappuccino + pastry at the bar ~€3.</div>
+          <div class="rest-addr">Via dei Serpenti, 165 · 10 min walk</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Hotel rooftop (included)</div>
+          <span class="rest-tag tag-bfast">Included</span>
+          <div class="rest-desc">Your Monti Palace rooftop breakfast buffet. Open 7:00–10:00 AM with Colosseum views. Great option before a big walking day.</div>
+          <div class="rest-addr">Via Cavour 185 · hotel 5th floor</div>
+        </div>
+      </div>
+
+      <p class="subhead">Walking tour — Colosseum to Trevi Fountain (~4–5 hours)</p>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        <strong>Print your Parco archeologico tickets before leaving home</strong> (booking #OCO3989330, PDF in your ticketcolosseo.com email). Bring a photo ID matching the booking name — entry denied without it.
+      </div>
+      <div style="margin-top:12px">
+        <div class="walk-stop">
+          <div class="walk-num">1</div>
+          <div class="walk-content">
+            <div class="walk-name">Parco archeologico del Colosseo</div>
+            <div class="walk-note">Your tickets (booking #OCO3989330) include the park, Roman Forum, and Palatine Hill. Start here first while energy is highest. The Forum ruins alone take an hour to wander, and Palatine Hill has sweeping views over the entire complex.</div>
+            <div class="walk-dist">Start point · Plan 1.5–2.5 hrs</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">2</div>
+          <div class="walk-content">
+            <div class="walk-name">Vittoriano / Piazza Venezia</div>
+            <div class="walk-note">Walk up Via dei Fori Imperiali (~12 min). The massive white marble monument nicknamed "the wedding cake." Free to enter — the rooftop terrace has sweeping 360° views and is often overlooked by tourists.</div>
+            <div class="walk-dist">~12 min walk · 20–30 min visit</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">3</div>
+          <div class="walk-content">
+            <div class="walk-name">Pantheon</div>
+            <div class="walk-note">Walk north through the historic center (~20 min). Nearly 2,000-year-old unreinforced concrete dome. The oculus floods the interior with light. Entry requires a timed ticket (~€5) — book ahead or queue on arrival.</div>
+            <div class="walk-dist">~20 min walk · 30–45 min visit</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">4</div>
+          <div class="walk-content">
+            <div class="walk-name">Trevi Fountain</div>
+            <div class="walk-note">7 min from the Pantheon. Rome's most famous fountain — 85 feet wide, carved from travertine marble. Toss a coin with your right hand over your left shoulder to guarantee your return. Very crowded midday — late afternoon light is more magical.</div>
+            <div class="walk-dist">~7 min walk · Spend as long as you like</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">5</div>
+          <div class="walk-content">
+            <div class="walk-name">Piazza Navona (optional)</div>
+            <div class="walk-note">Beautiful baroque piazza built over a Roman stadium, with three fountains including Bernini's Fountain of the Four Rivers. Surrounded by cafés — a good rest stop before dinner in Trastevere.</div>
+            <div class="walk-dist">~10 min from Trevi · 20–30 min visit</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="subhead">Lunch — between the Forum and Trevi</p>
+      <div class="rest-grid">
+        <div class="rest-card highlight">
+          <div class="rest-name">Il Sorpasso</div>
+          <span class="rest-tag tag-lunch">Lunch</span>
+          <div class="rest-desc">Casual, local wine bar with excellent sandwiches, charcuterie boards, and small plates. Great to recharge mid-walk without a heavy sit-down meal.</div>
+          <div class="rest-addr">Via Properzio, 31 · Near Piazza Navona</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Grappolo d'Oro</div>
+          <span class="rest-tag tag-lunch">Lunch</span>
+          <div class="rest-desc">Classic Roman trattoria near Campo de' Fiori. Honest Roman cooking, handwritten menus, generous portions.</div>
+          <div class="rest-addr">Piazza della Cancelleria, 80 · Near Campo de' Fiori</div>
+        </div>
+      </div>
+
+      <p class="subhead">Dinner — Trastevere (20–25 min walk or short taxi from Trevi)</p>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        Trastevere is one of Rome's most romantic neighborhoods — cobblestone streets, ivy-draped buildings, lantern-lit restaurants. Your last dinner in Rome before the cruise.
+      </div>
+      <div class="rest-grid">
+        <div class="rest-card highlight">
+          <div class="rest-name">Da Enzo al 29</div>
+          <span class="rest-tag tag-dinner">Dinner</span>
+          <div class="rest-desc">A Roman institution. No reservations — arrive before opening (7:30 PM) and queue. Tiny menu of perfectly executed classics: carbonara, cacio e pepe, braised artichokes. Worth the wait. ~€30–40/person.</div>
+          <div class="rest-addr">Via dei Vascellari, 29, Trastevere</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Glass Hostaria</div>
+          <span class="rest-tag tag-dinner">Dinner</span>
+          <div class="rest-desc">Michelin-starred, contemporary Italian. Creative seasonal menu. More upscale — ideal for a special honeymoon dinner. Reserve well in advance. ~€80–120/person.</div>
+          <div class="rest-addr">Vicolo del Cinque, 58, Trastevere</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Zia Restaurant</div>
+          <span class="rest-tag tag-dinner">Dinner</span>
+          <div class="rest-desc">Intimate (only 30 covers), one Michelin star, seasonal tasting menu. Exceptional food and service — a memorable splurge. Reserve months ahead.</div>
+          <div class="rest-addr">Via Goffredo Mameli, 45, Trastevere</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-name">Osteria Corsetti 1921</div>
+          <span class="rest-tag tag-dinner">Dinner</span>
+          <div class="rest-desc">Historic osteria in Trastevere since 1921. Traditional Roman food, relaxed atmosphere, outdoor tables. Solid choice if others are fully booked. ~€35–50/person.</div>
+          <div class="rest-addr">Piazza San Cosimato, 27, Trastevere</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;padding-top:14px;border-top:0.5px solid var(--border)">
+        <div class="detail-row">
+          <span class="detail-icon">🚂</span>
+          <span class="detail-label">Tomorrow's train</span>
+          <span class="detail-val">Civitavecchia port is ~60 min by regional train from Roma Termini (~€5 each). Plan to leave the hotel by 10–10:30 AM Sunday. See transport details in the June 7 card.</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-icon">🚢</span>
+          <span class="detail-label">Cruise prep</span>
+          <span class="detail-val">Attach luggage tags tonight if not done already: Stateroom 308 / Deck 6 / ODYSSEY / 07JUN26</span>
+        </div>
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d3" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d3">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRUISE SECTION -->
+  <p class="section-label" id="cruise">Royal Caribbean · Odyssey of the Seas</p>
+
+  <div class="ship-card">
+    <div class="ship-icon">⚓</div>
+    <div>
+      <div class="ship-name">Odyssey of the Seas</div>
+      <div class="ship-details">Reservation #7906901 · Stateroom 308 · Deck 6 · Category 1E · My Time Dining<br>Crown & Anchor members · Jun 7–14, 2026</div>
+    </div>
+    <div class="ship-meta">
+      <div class="ship-meta-val">7 nights</div>
+      <div class="ship-meta-label">Greek Isles cruise</div>
+    </div>
+  </div>
+
+  <!-- Day 4 – Embark -->
+  <div class="day-card open" id="c-d4">
+    <div class="day-header" onclick="toggle('c-d4')">
+      <div class="day-icon icon-port">⚓</div>
+      <div class="day-text">
+        <div class="day-title">Sunday, June 7 — Embark at Civitavecchia (Rome)</div>
+        <div class="day-sub">Board Odyssey of the Seas · Sails 4:00 PM</div>
+      </div>
+      <span class="badge badge-confirmed">Confirmed</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <p class="subhead">Getting to the port — train from Roma Termini</p>
+      <div class="transport-block">
+        <div class="transport-title">Roma Termini → Civitavecchia cruise port</div>
+        <div class="transport-option">
+          <span class="to-badge to-best">Recommended</span>
+          <div class="to-text"><strong>Trenitalia regional train</strong> — Direct from Roma Termini to Civitavecchia, every 30 min, ~€5 each, ~50–80 min. No advance booking needed — buy at Termini ticket machines on the day (accept cards, English menus). Catch a train departing around <strong>10:30–11:00 AM</strong> to arrive by noon, well before the 4:00 PM sailing.</div>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-fast">Fast option</span>
+          <div class="to-text"><strong>Frecciarossa/Frecciabianca express</strong> — ~40–45 min, ~€10–15 each. Comfortable reserved seating and luggage space. Worth it on embarkation day with bags.</div>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-cheap">Station to port</span>
+          <div class="to-text"><strong>Civitavecchia station → cruise terminal</strong> — Station is ~1.5 km from the terminal. Port shuttle bus runs from the station square (~€6/person, 10–15 min). Taxis also available (~€20–25).</div>
+        </div>
+      </div>
+
+      <div class="detail-row" style="margin-top:12px">
+        <span class="detail-icon">📍</span>
+        <span class="detail-label">Port entrance</span>
+        <span class="detail-val">Port of Civitavecchia — enter via <strong>"Varco Vespucci"</strong> only. Follow signs to "Porto."</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🕓</span>
+        <span class="detail-label">Sailing time</span>
+        <span class="detail-val">4:00 PM departure — arrive early; allow time for security/immigration queues</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🛏</span>
+        <span class="detail-label">Stateroom</span>
+        <span class="detail-val">#308 · Deck 6 · Category 1E · My Time Dining — reserve dinner times via the Royal Caribbean app</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">💳</span>
+        <span class="detail-label">Gratuities</span>
+        <span class="detail-val">$18.50/person/day auto-added to SeaPass · 18% on beverages · 20% on spa/salon</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🍷</span>
+        <span class="detail-label">Alcohol policy</span>
+        <span class="detail-val">1 sealed 750ml wine or champagne per person in carry-on on embarkation day only</span>
+      </div>
+      <div class="confirmed-block">
+        <strong>Shore excursions — both reserved ✓</strong>
+        <div class="confirmed-row"><span class="confirmed-key">Wed Jun 10</span><span>Ephesus & Sirince, Turkey · departs 10:30 AM · 6.5 hrs</span></div>
+        <div class="confirmed-row"><span class="confirmed-key">Sat Jun 13</span><span>Glimpse of Pompeii, Naples · departs 8:30 AM · 4.5 hrs</span></div>
+      </div>
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠</span>
+        Mandatory muster safety drill required after boarding. Complete via the Royal Caribbean app (eMuster) or attend your muster station. Must be done before departure.
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        Use reef-safe mineral-based sunscreen — oxybenzone and octinoxate are banned at several ports on this route. Keep all onboard retail and spa receipts for VAT reclaim at FCO on Jun 15.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d4" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d4">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 – At sea -->
+  <div class="day-card" id="c-d5">
+    <div class="day-header" onclick="toggle('c-d5')">
+      <div class="day-icon icon-sea">〜</div>
+      <div class="day-text">
+        <div class="day-title">Monday, June 8 — Day at sea</div>
+        <div class="day-sub">Cruising toward the Greek Isles</div>
+      </div>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="callout callout-tip">
+        <span class="callout-icon">★</span>
+        Perfect day to explore the ship, book specialty dining, spa reservations, and browse the Cruise Compass app for the week's entertainment schedule. My Time Dining — make your first reservation tonight.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d5" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d5">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 6 – Santorini -->
+  <div class="day-card" id="c-d6">
+    <div class="day-header" onclick="toggle('c-d6')">
+      <div class="day-icon icon-port">⛵</div>
+      <div class="day-text">
+        <div class="day-title">Tuesday, June 9 — Santorini, Greece</div>
+        <div class="day-sub">Tender port · 10:00 AM – 11:00 PM · No excursion booked</div>
+      </div>
+      <span class="badge badge-port">Port day</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="detail-row">
+        <span class="detail-icon">🕙</span>
+        <span class="detail-label">In port</span>
+        <span class="detail-val">10:00 AM – 11:00 PM — late night! Plenty of time to explore</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">⛵</span>
+        <span class="detail-label">Tender port</span>
+        <span class="detail-val">Small boat ferry to shore — not docked directly. Factor in tender wait time.</span>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">★</span>
+        Santorini highlights: Fira (main town, near tender dock), Oia village (famous sunset — very crowded, go early or late), Akrotiri ruins, black sand beaches at Perissa. Cable car to Fira gets extremely crowded — consider the walking path or donkey path up the caldera.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d6" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d6">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 7 – Ephesus EXCURSION -->
+  <div class="day-card open" id="c-d7">
+    <div class="day-header" onclick="toggle('c-d7')">
+      <div class="day-icon icon-shore">🏛</div>
+      <div class="day-text">
+        <div class="day-title">Wednesday, June 10 — Ephesus & Sirince, Turkey</div>
+        <div class="day-sub">Shore excursion · Departs 10:30 AM · 6.5 hours</div>
+      </div>
+      <span class="badge badge-excursion">Excursion reserved</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="detail-row">
+        <span class="detail-icon">🕘</span>
+        <span class="detail-label">Port hours</span>
+        <span class="detail-val">Dock 9:00 AM — Ship departs 7:00 PM · Be back well before 7 PM</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🎫</span>
+        <span class="detail-label">Excursion</span>
+        <span class="detail-val">Ephesus & Sirince — Day 4 (Kusadasi, Turkey) — RESERVED at $140.99/adult</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🕙</span>
+        <span class="detail-label">Departs</span>
+        <span class="detail-val">10:30 AM from ship · Duration: 6 hrs 30 min · Returns ~5:00 PM</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🗺</span>
+        <span class="detail-label">Itinerary</span>
+        <span class="detail-val">Ancient Ephesus ruins (UNESCO) → Sirince village wine tasting → Turkish carpet gallery → meal included</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">👟</span>
+        <span class="detail-label">Footwear</span>
+        <span class="detail-val">NON-SLIP closed-toe shoes — marble ruins are extremely slippery. No sandals or heels.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">👗</span>
+        <span class="detail-label">Dress — Mary</span>
+        <span class="detail-val">Turkish cultural sites call for modest dress. <strong>Pack your shawl in your day bag</strong> to cover shoulders as needed.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🎧</span>
+        <span class="detail-label">Equipment</span>
+        <span class="detail-val">Audio headset provided — return to guide at end of tour</span>
+      </div>
+      <div class="callout callout-tip-pink">
+        <span class="callout-icon">👗</span>
+        <strong>Reminder for Mary — shawl in the day bag.</strong> Loosely draped to cover shoulders at cultural and historical sites; easily stowed the rest of the time.
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        <strong>Footwear is critical.</strong> Ephesus marble floors are notoriously slippery — non-slip closed-toe shoes are mandatory. Walk is ~2.6 miles over uneven surfaces with ~123 steps.
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        <strong>Turkey e-Visa required.</strong> Must be obtained at evisa.gov.tr before departure. Royal Caribbean will not allow you off the ship without it.
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        Meal served during the excursion. Wine tasting at Sirince included. Have euros ready for guide and driver tips at the end (~€15–20 total).
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d7" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d7">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 8 – Mykonos -->
+  <div class="day-card" id="c-d8">
+    <div class="day-header" onclick="toggle('c-d8')">
+      <div class="day-icon icon-port">⛵</div>
+      <div class="day-text">
+        <div class="day-title">Thursday, June 11 — Mykonos, Greece</div>
+        <div class="day-sub">Tender port · 7:00 AM – 5:00 PM</div>
+      </div>
+      <span class="badge badge-port">Port day</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="detail-row">
+        <span class="detail-icon">🕖</span>
+        <span class="detail-label">In port</span>
+        <span class="detail-val">7:00 AM – 5:00 PM — tender port, earlier cutoff than Santorini. Be back by 4:30 PM.</span>
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        5:00 PM hard cutoff — tender ports require extra buffer time to get back to the ship. Aim to be at the tender dock by 4:15–4:30 PM at the latest.
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">★</span>
+        Little Venice and the windmills are walkable from the old port. Paradise Beach and Super Paradise Beach require transport (~15 min by bus or taxi). The narrow whitewashed lanes of Mykonos Town are perfect for a honeymoon morning stroll.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d8" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d8">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 9 – At sea -->
+  <div class="day-card" id="c-d9">
+    <div class="day-header" onclick="toggle('c-d9')">
+      <div class="day-icon icon-sea">〜</div>
+      <div class="day-text">
+        <div class="day-title">Friday, June 12 — Day at sea</div>
+        <div class="day-sub">Cruising back toward Italy</div>
+      </div>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        Pack your checked luggage tonight — crew collects bags before dawn on Jun 13 for the Naples port day. Keep an overnight bag with tomorrow's clothes, toiletries, passports, and valuables. Do NOT pack boarding documents in checked bags.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d9" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d9">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 10 – Naples EXCURSION -->
+  <div class="day-card open" id="c-d10">
+    <div class="day-header" onclick="toggle('c-d10')">
+      <div class="day-icon icon-shore">🏛</div>
+      <div class="day-text">
+        <div class="day-title">Saturday, June 13 — Naples, Italy · Glimpse of Pompeii</div>
+        <div class="day-sub">Shore excursion · Departs 8:30 AM · 4.5 hours</div>
+      </div>
+      <span class="badge badge-excursion">Excursion reserved</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="detail-row">
+        <span class="detail-icon">🕖</span>
+        <span class="detail-label">Port hours</span>
+        <span class="detail-val">Dock 7:00 AM — Ship departs 6:00 PM</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🎫</span>
+        <span class="detail-label">Excursion</span>
+        <span class="detail-val">Glimpse of Pompeii — Day 7 (Naples, Italy) — RESERVED at $125.99/adult</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🕗</span>
+        <span class="detail-label">Departs</span>
+        <span class="detail-val">8:30 AM from ship · Duration: 4 hrs 30 min · Returns well before 6 PM departure</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🗺</span>
+        <span class="detail-label">Itinerary</span>
+        <span class="detail-val">Pompeii ancient ruins via wheelchair-accessible paved path · English-speaking guide · Optional cameo factory visit</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">👟</span>
+        <span class="detail-label">Dress code</span>
+        <span class="detail-val">Non-slip shoes · Sunglasses · Hat · NO large bags, backpacks, or oversized purses inside excavation site</span>
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        <strong>No large bags inside Pompeii</strong> — leave backpacks and oversized bags on the coach. Bring only a small bag or nothing. New regulations mean long entrance queues — arrive at the meeting point on time.
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        This tour uses a paved, wheelchair-accessible path. English-speaking guide throughout. Time permitting, a cameo factory visit either before or after. Have euros ready for guide tip (~€15–20).
+      </div>
+
+      <p class="subhead">Naples afternoon — ~5 hours free after excursion returns (~1 PM)</p>
+      <div class="callout callout-tip">
+        <span class="callout-icon">★</span>
+        <strong>The port is 10 minutes on foot to the city center</strong> — no taxi needed. Walk out of the terminal along the waterfront and you're already there.
+      </div>
+      <div style="margin-top:10px">
+        <div class="walk-stop">
+          <div class="walk-num">🍕</div>
+          <div class="walk-content">
+            <div class="walk-name">Pizza — first priority, non-negotiable</div>
+            <div class="walk-note">Naples invented pizza. <strong>L'Antica Pizzeria da Michele</strong> (Via Cesare Sersale 1) — Margherita or Marinara only, ~€5–8, cash only. Expect a queue; get a number at the door. If the wait is too long, <strong>Sorbillo</strong> on Via dei Tribunali is the next best. Both are within a 15–20 min walk of the port. This is the meal of the day.</div>
+            <div class="walk-dist">Via Cesare Sersale 1 (da Michele) or Via dei Tribunali 32 (Sorbillo) · 15–20 min walk</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">1</div>
+          <div class="walk-content">
+            <div class="walk-name">Castel Nuovo (Maschio Angioino)</div>
+            <div class="walk-note">The dramatic 13th-century fortress right at the port — you'll walk past it leaving the terminal. Impressive from outside at no cost, or enter the Civic Museum for €6 (Mon–Sat 8:30 AM–5:30 PM). Five towers and an ornate triumphal arch — very photogenic.</div>
+            <div class="walk-dist">Right at the port · 30 min or just admire from outside</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">2</div>
+          <div class="walk-content">
+            <div class="walk-name">Piazza del Plebiscito & Royal Palace</div>
+            <div class="walk-note">Naples' largest square, flanked by the <strong>Basilica of San Francesco di Paola</strong> (free, Pantheon-inspired dome) and the <strong>Royal Palace</strong> (throne rooms and state apartments are genuinely spectacular). Even just the scale of the piazza is impressive.</div>
+            <div class="walk-dist">~10 min walk from port · 20–30 min</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">3</div>
+          <div class="walk-content">
+            <div class="walk-name">Via Toledo & Toledo Metro Station</div>
+            <div class="walk-note">Naples' main shopping street. Duck into the <strong>Toledo Metro Station</strong> — the Daily Telegraph named it the most impressive metro station in the world. Buy a €1.10 ticket, ride down, and look up: thousands of tiny blue-and-white tiles replicating the ocean. Ride back up — you don't even need to take a train. Also here: <strong>Galleria Umberto I</strong>, a beautiful 19th-century glass-domed arcade.</div>
+            <div class="walk-dist">~10 min walk from Piazza del Plebiscito · 15–20 min</div>
+          </div>
+        </div>
+        <div class="walk-stop">
+          <div class="walk-num">4</div>
+          <div class="walk-content">
+            <div class="walk-name">Castel dell'Ovo & Lungomare waterfront</div>
+            <div class="walk-note">Naples' oldest fortress on a small peninsula — free to enter. Outstanding views of the Gulf of Naples and Mount Vesuvius. The <strong>Lungomare Caracciolo</strong> waterfront promenade stretches along the bay — perfect wind-down before heading back to the ship. Pick up a <strong>sfogliatella</strong> (shell-shaped Campanian pastry) from any café near the waterfront.</div>
+            <div class="walk-dist">~15 min walk from Piazza del Plebiscito · Easy walk back to port</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        Keep bags close in Naples — standard big-city awareness for pickpocketing in tourist areas. Cross-body bag, phone in a pocket, valuables out of sight. The areas above are all fine during the day.
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ</span>
+        <strong>Ship departs 6:00 PM — be back at the port by 5:15 PM at the latest.</strong> The port is 10 minutes on foot from the Castel Nuovo area.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d10" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d10">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 11 – Disembark -->
+  <div class="day-card open" id="c-d11">
+    <div class="day-header" onclick="toggle('c-d11')">
+      <div class="day-icon icon-hotel">🏖</div>
+      <div class="day-text">
+        <div class="day-title">Sunday, June 14 — Disembark · Lido di Ostia</div>
+        <div class="day-sub">Cruise ends · Last night near Rome</div>
+      </div>
+      <span class="badge badge-confirmed">Confirmed</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <div class="detail-row">
+        <span class="detail-icon">🕔</span>
+        <span class="detail-label">Ship arrives</span>
+        <span class="detail-val">5:00 AM at Civitavecchia — disembarkation begins hours later. Realistically expect to be off the ship by 9–10 AM.</span>
+      </div>
+
+      <p class="subhead">Getting from Civitavecchia to Lido di Ostia</p>
+      <div class="callout callout-info" style="margin-bottom:10px">
+        <span class="callout-icon">ℹ</span>
+        No direct route — everything goes through Rome. The good news: the Civitavecchia train stops at <strong>Roma Ostiense</strong>, right next to the <strong>Porta San Paolo</strong> station for the Roma–Lido di Ostia line. A well-connected two-train journey without going all the way to Termini.
+      </div>
+      <div class="transport-block">
+        <div class="transport-title">Civitavecchia cruise port → Lido di Ostia · ~2 hours total</div>
+        <div class="transport-option">
+          <span class="to-badge to-best">Recommended</span>
+          <div class="to-text">
+            <strong>Two trains via Roma Ostiense</strong><br>
+            <strong>Step 1:</strong> Port shuttle to Civitavecchia station (~€6, 10–15 min).<br>
+            <strong>Step 2:</strong> Trenitalia train Civitavecchia → <strong>Roma Ostiense</strong> (~55–70 min, ~€5–15).<br>
+            <strong>Step 3:</strong> Walk ~2 min to <strong>Porta San Paolo station</strong> — take the <strong>Roma–Lido Metromare</strong> direct to <strong>Lido Centro</strong> (~31 min, ~€1.50). Short walk or taxi to hotel.<br>
+            <strong>Total: ~€13–22 for both · ~2 hours</strong>
+          </div>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-fast">Easiest with bags</span>
+          <div class="to-text"><strong>Private taxi direct</strong> — Door to door, Civitavecchia port to Lido di Ostia, ~€70–90, ~50–55 min by motorway. On a disembarkation day with full luggage this is the most stress-free option. Pre-book online the night before.</div>
+        </div>
+      </div>
+
+      <div class="detail-row" style="margin-top:12px">
+        <span class="detail-icon">🏨</span>
+        <span class="detail-label">Hotel</span>
+        <span class="detail-val">Lido di Ostia 1933 di Alberti Emiliano · Via delle Gondole 156 · +39 328 0262923 · Booking #8478396626 · €149 total</span>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">★</span>
+        After a week on a ship, a real Italian seaside afternoon is a lovely change. Ostia Antica (the ancient Roman port ruins) is a few stops back on the Roma–Lido line — genuinely impressive, much less crowded than Pompeii, and largely overlooked by tourists.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d11" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d11">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETURN -->
+  <p class="section-label">Return home</p>
+
+  <!-- Day 12 -->
+  <div class="day-card open" id="c-d12">
+    <div class="day-header" onclick="toggle('c-d12')">
+      <div class="day-icon icon-flight">✈</div>
+      <div class="day-text">
+        <div class="day-title">Monday, June 15 — Fly home to Phoenix</div>
+        <div class="day-sub">Rome FCO → Seattle SEA → Phoenix PHX · Arrive 9:24 PM</div>
+      </div>
+      <span class="badge badge-confirmed">Confirmed</span>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="day-body">
+      <p class="subhead">Getting to FCO from Lido di Ostia — it's close and simple</p>
+      <div class="transport-block">
+        <div class="transport-title">Lido di Ostia → Rome Fiumicino Airport (FCO) · ~7 miles</div>
+        <div class="transport-option">
+          <span class="to-badge to-best">Easiest</span>
+          <div class="to-text"><strong>Taxi from hotel</strong> — Direct door-to-door, ~13–15 min, ~€40–55. Simplest on a travel day with luggage. Ask the hotel to call one the night before. Flight departs 12:20 PM — leave the hotel no later than <strong>9:30 AM</strong> to allow time for VAT reclaim at FCO.</div>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-cheap">Budget</span>
+          <div class="to-text"><strong>COTRAL direct bus</strong> — From Ostia | Via Armuzzi bus stop to Aeroporto L. Da Vinci Terminal T2. Runs hourly, ~29–38 min, ~€1.30. Very cheap and surprisingly direct — FCO is just across the river from Ostia.</div>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-fast">If booked ahead</span>
+          <div class="to-text"><strong>Pre-booked private transfer</strong> — Fixed-price ~€35–50. Worth booking the night before if you prefer certainty over a street taxi.</div>
+        </div>
+      </div>
+
+      <p class="subhead">Flights home</p>
+      <div class="flight-leg" style="margin-top:10px">
+        <div class="flight-leg-header"><span class="flight-leg-num">Leg 1 of 2</span> Delta DL 43</div>
+        <div class="flight-row"><span class="flight-key">Departs</span><span class="flight-val">Rome Fiumicino (FCO) at <strong>12:20 PM</strong></span></div>
+        <div class="flight-row"><span class="flight-key">Arrives</span><span class="flight-val">Seattle-Tacoma (SEA) at <strong>3:25 PM</strong></span></div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-header"><span class="flight-leg-num">Leg 2 of 2</span> Delta DL 2698</div>
+        <div class="flight-row"><span class="flight-key">Departs</span><span class="flight-val">Seattle-Tacoma (SEA) at <strong>6:30 PM</strong></span></div>
+        <div class="flight-row"><span class="flight-key">Arrives</span><span class="flight-val">Phoenix Sky Harbor (PHX) at <strong>9:24 PM</strong></span></div>
+      </div>
+      <div class="booking-ref">
+        <div class="booking-ref-title">Delta booking reference</div>
+        <div class="booking-ref-row"><span class="booking-ref-key">Confirmation code</span><span>GTASLX (also MLHUAO — same booking, two codes)</span></div>
+        <div class="booking-ref-row"><span class="booking-ref-key">Kiel's e-ticket</span><span>7436783844</span></div>
+        <div class="booking-ref-row"><span class="booking-ref-key">Mary's e-ticket</span><span>7436783845</span></div>
+      </div>
+      <div class="callout callout-warn" style="margin-top:12px">
+        <span class="callout-icon">⚠</span>
+        <strong>VAT reclaim at FCO — arrive 30–45 min early for this.</strong> Before checking bags: find the Customs / Tax Refund desk in the departures hall and have purchases, receipts, and VAT forms stamped. Then take stamped forms to the <strong>Global Blue or Planet counter</strong> for your cash or card refund. Can't claim after leaving the airport.
+      </div>
+      <div class="callout callout-ok">
+        <span class="callout-icon">✓</span>
+        Welcome home, Mr. & Mrs. Revenew.
+      </div>
+      <div class="day-notes">
+        <div class="day-notes-label"><span>📝</span> Notes</div>
+        <textarea placeholder="Add notes for this day…" data-day="d12" oninput="saveNote(this)"></textarea>
+        <div class="notes-saved" id="saved-d12">Saved ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERGENCY CONTACTS -->
+  <p class="section-label" id="contacts">Emergency contacts</p>
+  <div class="actions-card">
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>Royal Caribbean (general)</strong> — +1 800 327 6700</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>Air2Sea day-of-travel disruptions</strong> — +1 800 256 6649 or +1 305 539 4107</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>Air Canada (day of travel)</strong> — 1 888 247 2262 · Confirmation: CP3SHV / ITCWHV</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>Delta (day of travel)</strong> — 1 800 221 1212 · Confirmation: GTASLX / MLHUAO</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>Monti Palace Hotel, Rome</strong> — +39 06 480231 · info@montipalacehotel.com</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>Lido di Ostia hotel</strong> — +39 328 0262923 · cgalberti@libero.it</div>
+    </div>
+    <div class="action-item">
+      <div class="action-dot dot-info">📞</div>
+      <div class="action-text"><strong>GenVisa (visa assistance)</strong> — +1 800 845 8968 · rci@genvisa.com · genvisa.com/rci</div>
+    </div>
+  </div>
+
+  <!-- PHONE GUIDE -->
+  <p class="section-label" id="phone">Phone & calling guide</p>
+  <div class="info-panel">
+    <h3>T-Mobile international coverage</h3>
+    <p>T-Mobile Magenta and higher plans include <strong>free data and texting in Italy, Greece, and Turkey</strong> (data at 2G speeds — good for maps and messages). Calls cost $0.25/min, or use Wi-Fi Calling for free. Confirm your specific plan at T-Mobile.com before leaving.</p>
+    <p><strong>On the cruise ship:</strong> Turn off cellular roaming entirely and use ship Wi-Fi for everything. Ship roaming charges are extremely high.</p>
+    <p><strong>Offline maps:</strong> Download Google Maps offline regions for Rome, Santorini, Mykonos, Kusadasi/Ephesus, and Naples before leaving home. Works with no signal.</p>
+  </div>
+  <div class="info-panel">
+    <h3>How to call international numbers</h3>
+    <p>Just dial the number exactly as printed — your smartphone handles country codes automatically. Example: <strong>+39 06 480231</strong> (Monti Palace) — just tap and call.</p>
+    <p>Country codes: Italy <strong>+39</strong> · Greece <strong>+30</strong> · Turkey <strong>+90</strong>. All work the same way from your phone.</p>
+  </div>
+
+  <!-- VAT RECLAIM -->
+  <p class="section-label" id="vat">VAT reclaim guide</p>
+  <div class="info-panel">
+    <h3>What is VAT?</h3>
+    <p>VAT is Europe's sales tax (~22% in Italy, ~24% in Greece). As US citizens, you're eligible to reclaim it on qualifying purchases over €70 at participating stores — look for a "Tax Free Shopping" sign.</p>
+    <h3 style="margin-top:12px">At the store</h3>
+    <p>Ask the cashier: <em>"Can I get a VAT refund form?"</em> They'll fill out a Global Blue or Planet form and attach your receipt. Keep all of these safe throughout the trip.</p>
+    <h3 style="margin-top:12px">At FCO on June 15 — step by step</h3>
+    <p><strong>Step 1.</strong> Before checking your bags, find the <strong>Customs / Tax Refund desk</strong> in the FCO departures hall. Show purchases, receipts, and completed VAT forms — the officer stamps the forms.</p>
+    <p><strong>Step 2.</strong> Take the stamped forms to the <strong>Global Blue or Planet counter</strong> (also in departures) for your refund as cash euros or card reimbursement.</p>
+    <p>Allow <strong>30–45 extra minutes</strong> at the airport for this process.</p>
+    <h3 style="margin-top:12px">Onboard ship purchases</h3>
+    <p>Guest Services will provide VAT claim forms onboard. Keep all onboard retail and spa receipts throughout the cruise.</p>
+    <p style="margin-top:8px;color:var(--ink-light);font-size:11px"><em>Nothing to prepare now — just keep receipts as you go.</em></p>
+  </div>
+
+</div>
+
+<footer>
+  <em>Kiel & Mary — Mediterranean Honeymoon 2026</em><br><br>
+  Generated from confirmed bookings · Royal Caribbean Reservation #7906901 · Air Canada CP3SHV · Delta GTASLX<br>
+  Print this page for an offline backup copy (Ctrl+P / Cmd+P)
+</footer>
+
+<script>
+  // ── COUNTDOWN ─────────────────────────────────────────────────────────────
+  const DEPARTURE = new Date('2026-06-04T07:55:00-07:00'); // PHX departure
+  let celebrated = false;
+
+  const ICONS = { days: '⚓', hours: '✈️', mins: '🏃', secs: '😊' };
+
+  function setVal(id, num) {
+    const el = document.getElementById('cd-' + id);
+    if (num === 0) {
+      el.style.fontSize = '38px';
+      el.textContent = ICONS[id];
+    } else {
+      el.style.fontSize = '';
+      el.textContent = String(num).padStart(2, '0');
+    }
+  }
+
+  function updateCountdown() {
+    const diff = DEPARTURE - new Date();
+
+    if (diff <= 0) {
+      setVal('days', 0);
+      setVal('hours', 0);
+      setVal('mins', 0);
+      setVal('secs', 0);
+      return;
+    }
+
+    setVal('days',  Math.floor(diff / 86400000));
+    setVal('hours', Math.floor((diff % 86400000) / 3600000));
+    setVal('mins',  Math.floor((diff % 3600000)  / 60000));
+    setVal('secs',  Math.floor((diff % 60000)    / 1000));
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ── DAY CARD TOGGLE ────────────────────────────────────────────────────────
+  function toggle(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  // ── NOTES (localStorage) ───────────────────────────────────────────────────
+  let saveTimers = {};
+
+  function saveNote(textarea) {
+    const key = 'honeymoon_note_' + textarea.dataset.day;
+    localStorage.setItem(key, textarea.value);
+
+    const savedEl = document.getElementById('saved-' + textarea.dataset.day);
+    savedEl.classList.add('visible');
+    clearTimeout(saveTimers[key]);
+    saveTimers[key] = setTimeout(() => savedEl.classList.remove('visible'), 1500);
+  }
+
+  function loadNotes() {
+    document.querySelectorAll('[data-day]').forEach(ta => {
+      const key = 'honeymoon_note_' + ta.dataset.day;
+      const saved = localStorage.getItem(key);
+      if (saved) ta.value = saved;
+    });
+  }
+
+  // ── PACKING CHECKLIST ──────────────────────────────────────────────────────
+  const PACK_DATA = [
+    {
+      icon: '📄', title: 'Documents & Finance', items: [
+        { id: 'p1',  label: 'Passports (valid to Dec 2026)', urgent: true },
+        { id: 'p2',  label: 'Turkey e-Visa (both travelers)', urgent: true },
+        { id: 'p3',  label: 'SetSail Pass printed', urgent: true },
+        { id: 'p4',  label: 'Cruise luggage tags (Stateroom 308)', urgent: true },
+        { id: 'p5',  label: 'Travel insurance card / policy' },
+        { id: 'p6',  label: 'Flight confirmation printouts' },
+        { id: 'p7',  label: 'Hotel booking confirmations' },
+        { id: 'p8',  label: 'Credit cards (notify bank of travel)' },
+        { id: 'p9',  label: 'Cash — Euros & some USD' },
+        { id: 'p10', label: 'Copies of all docs (separate bag)' },
+      ]
+    },
+    {
+      icon: '👕', title: 'Clothing', items: [
+        { id: 'c1', label: 'Smart casual outfits (dinner)' },
+        { id: 'c2', label: 'Light daywear (7+ days)' },
+        { id: 'c3', label: 'Swimsuits (2+)' },
+        { id: 'c4', label: 'Cover-ups / sarongs' },
+        { id: 'c5', label: 'Non-slip walking shoes (excursions)', urgent: true },
+        { id: 'c6', label: 'Comfortable sandals' },
+        { id: 'c7', label: 'Dress shoes (1 pair)' },
+        { id: 'c8', label: 'Light jacket / cardigan' },
+        { id: 'c9', label: 'Pajamas' },
+        { id: 'c10', label: 'Underwear & socks (7+ days)' },
+      ]
+    },
+    {
+      icon: '🧴', title: 'Toiletries', items: [
+        { id: 't1', label: 'Sunscreen — biodegradable (Ephesus req.)', urgent: true },
+        { id: 't2', label: 'After-sun lotion' },
+        { id: 't3', label: 'Prescription medications' },
+        { id: 't4', label: 'Motion sickness pills' },
+        { id: 't5', label: 'Pain relievers / antacids' },
+        { id: 't6', label: 'Shampoo & conditioner (travel size)' },
+        { id: 't7', label: 'Toothbrush & toothpaste' },
+        { id: 't8', label: 'Deodorant' },
+        { id: 't9', label: 'Razor' },
+        { id: 't10', label: 'Lip balm with SPF' },
+      ]
+    },
+    {
+      icon: '🔌', title: 'Electronics', items: [
+        { id: 'e1', label: 'Phone + charger' },
+        { id: 'e2', label: 'EU/Italy/Turkey power adapters' },
+        { id: 'e3', label: 'Portable battery pack' },
+        { id: 'e4', label: 'Camera + memory cards' },
+        { id: 'e5', label: 'Earbuds / headphones' },
+        { id: 'e6', label: 'International SIM or roaming plan' },
+        { id: 'e7', label: 'Royal Caribbean app downloaded' },
+      ]
+    },
+    {
+      icon: '🎒', title: 'Excursion Essentials', items: [
+        { id: 'x1', label: 'Hats — sun protection', urgent: true },
+        { id: 'x2', label: 'Sunglasses', urgent: true },
+        { id: 'x3', label: 'Small day bag (Pompeii: no large bags)', urgent: true },
+        { id: 'x4', label: 'Reusable water bottle' },
+        { id: 'x5', label: 'Neck pillow (flight)' },
+        { id: 'x6', label: 'Snacks for travel days' },
+        { id: 'x7', label: 'Ziplock bags (wet swimwear)' },
+      ]
+    },
+  ];
+
+  function buildPacking() {
+    const grid = document.getElementById('pack-grid');
+    grid.innerHTML = '';
+
+    PACK_DATA.forEach(cat => {
+      const div = document.createElement('div');
+      div.className = 'pack-category';
+      div.innerHTML = `
+        <div class="pack-cat-header" onclick="toggleCat(this)">
+          <div class="pack-cat-title">
+            <span class="pack-cat-icon">${cat.icon}</span> ${cat.title}
+          </div>
+          <div class="pack-progress-wrap">
+            <div class="pack-progress-bar">
+              <div class="pack-progress-fill" style="width:0%"></div>
+            </div>
+            <span class="pack-count">0 / ${cat.items.length}</span>
+          </div>
+        </div>
+        <div class="pack-items">
+          ${cat.items.map(item => `
+            <label class="pack-item${isChecked(item.id) ? ' checked' : ''}" id="pi-${item.id}">
+              <input type="checkbox" id="${item.id}" onchange="togglePack(this)"
+                     ${isChecked(item.id) ? 'checked' : ''}>
+              <span class="pack-item-label">${item.label}</span>
+              ${item.urgent ? '<span class="pack-urgent-dot" title="Required"></span>' : ''}
+            </label>
+          `).join('')}
+        </div>
+      `;
+      grid.appendChild(div);
+    });
+
+    updatePackTotals();
+  }
+
+  function isChecked(id) {
+    return localStorage.getItem('honeymoon_pack_' + id) === '1';
+  }
+
+  function togglePack(checkbox) {
+    const key = 'honeymoon_pack_' + checkbox.id;
+    localStorage.setItem(key, checkbox.checked ? '1' : '0');
+    const label = document.getElementById('pi-' + checkbox.id);
+    label.classList.toggle('checked', checkbox.checked);
+    updatePackTotals();
+  }
+
+  function toggleCat(header) {
+    const items = header.nextElementSibling;
+    items.style.display = items.style.display === 'none' ? '' : 'none';
+  }
+
+  function updatePackTotals() {
+    let total = 0, done = 0;
+
+    document.querySelectorAll('#pack-grid .pack-category').forEach((catEl, i) => {
+      const checkboxes = catEl.querySelectorAll('input[type="checkbox"]');
+      const catDone = [...checkboxes].filter(c => c.checked).length;
+      const catTotal = checkboxes.length;
+      total += catTotal;
+      done  += catDone;
+
+      const fill  = catEl.querySelector('.pack-progress-fill');
+      const count = catEl.querySelector('.pack-count');
+      fill.style.width = catTotal ? (catDone / catTotal * 100) + '%' : '0%';
+      count.textContent = `${catDone} / ${catTotal}`;
+    });
+
+    document.getElementById('pack-done-count').textContent  = done;
+    document.getElementById('pack-total-count').textContent = total;
+    document.getElementById('pack-total-fill').style.width  = total ? (done / total * 100) + '%' : '0%';
+  }
+
+  function resetPacking() {
+    if (!confirm('Reset all packing checkboxes?')) return;
+    PACK_DATA.forEach(cat => cat.items.forEach(item => {
+      localStorage.removeItem('honeymoon_pack_' + item.id);
+    }));
+    buildPacking();
+  }
+
+  // ── INIT ───────────────────────────────────────────────────────────────────
+  loadNotes();
+  buildPacking();
+</script>
+
+</body>
+</html>
