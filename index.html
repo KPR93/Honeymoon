@@ -1264,17 +1264,28 @@
   <!-- PACKING CHECKLIST -->
   <p class="section-label" id="packing">Packing checklist</p>
 
-  <div class="pack-total-bar">
-    <div class="pack-total-text">
-      <strong id="pack-done-count">0</strong> of <strong id="pack-total-count">0</strong> items packed
+  <div class="day-card open" id="c-pack-interactive">
+    <div class="day-header" onclick="toggle('c-pack-interactive')">
+      <div class="day-icon" style="background:var(--sea-light);color:var(--sea)">✅</div>
+      <div class="day-text">
+        <div class="day-title">Interactive packing checklist</div>
+        <div class="day-sub">Check items off as you pack — progress saves automatically</div>
+      </div>
+      <span class="chevron">⌄</span>
     </div>
-    <div class="pack-total-progress">
-      <div class="pack-total-fill" id="pack-total-fill" style="width:0%"></div>
+    <div class="day-body">
+      <div class="pack-total-bar">
+        <div class="pack-total-text">
+          <strong id="pack-done-count">0</strong> of <strong id="pack-total-count">0</strong> items packed
+        </div>
+        <div class="pack-total-progress">
+          <div class="pack-total-fill" id="pack-total-fill" style="width:0%"></div>
+        </div>
+        <button class="pack-reset-btn" onclick="resetPacking()">Reset all</button>
+      </div>
+      <div class="pack-grid" id="pack-grid"></div>
     </div>
-    <button class="pack-reset-btn" onclick="resetPacking()">Reset all</button>
   </div>
-
-  <div class="pack-grid" id="pack-grid"></div>
 
   <!-- MARY'S PACKING LIST -->
   <p class="section-label">Mary's packing list</p>
