@@ -917,8 +917,7 @@
   <a href="#packing">🎒 Packing</a>
   <a href="#rome">🏛 Rome</a>
   <a href="#cruise">⚓ Cruise</a>
-  <a href="#contacts">📞 Contacts</a>
-  <a href="#phone">📱 Phone</a>
+  <a href="#contacts">📞 Contacts & Phone</a>
   <a href="#vat">💶 VAT</a>
   <a href="#mom" onclick="collapseAllForMom()">❤️ For Mom</a>
 </nav>
@@ -2200,56 +2199,50 @@
     </div>
   </div>
 
-  <!-- EMERGENCY CONTACTS -->
-  <p class="section-label" id="contacts">Emergency contacts</p>
-  <div class="actions-card">
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>Royal Caribbean (general)</strong> — +1 800 327 6700</div>
+  <!-- CONTACTS + PHONE GUIDE -->
+  <p class="section-label" id="contacts">Contacts & phone guide</p>
+  <div class="day-card open" id="c-contacts">
+    <div class="day-header" onclick="toggle('c-contacts')">
+      <div class="day-icon" style="background:var(--sea-light);color:var(--sea)">📞</div>
+      <div class="day-text">
+        <div class="day-title">Emergency contacts & phone guide</div>
+        <div class="day-sub">Key numbers · Saily eSIM · Calling internationally</div>
+      </div>
+      <span class="chevron">⌄</span>
     </div>
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>Air2Sea day-of-travel disruptions</strong> — +1 800 256 6649 or +1 305 539 4107</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>Air Canada (day of travel)</strong> — 1 888 247 2262 · Confirmation: CP3SHV / ITCWHV</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>Delta (day of travel)</strong> — 1 800 221 1212 · Confirmation: GTASLX / MLHUAO</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>Monti Palace Hotel, Rome</strong> — +39 06 480231 · info@montipalacehotel.com</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>Lido di Ostia hotel</strong> — +39 328 0262923 · cgalberti@libero.it</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-info">📞</div>
-      <div class="action-text"><strong>GenVisa (visa assistance)</strong> — +1 800 845 8968 · rci@genvisa.com · genvisa.com/rci</div>
-    </div>
-  </div>
+    <div class="day-body">
 
-  <!-- PHONE GUIDE -->
-  <p class="section-label" id="phone">Phone & calling guide</p>
-  <div class="info-panel">
-    <h3>📱 Saily eSIM — recommended for full-speed data</h3>
-    <p><strong>Download the Saily app</strong> (iOS or Android) before you leave and purchase the <strong>Europe unlimited data eSIM plan</strong>. This gives you fast LTE/5G data across all your ports — Italy, Greece, Turkey — without touching your T-Mobile plan or risking roaming charges.</p>
-    <p><strong>How it works:</strong> Saily installs a virtual SIM alongside your regular one. When you land in Europe, activate it and your phone uses Saily's data automatically. Your US number still works for texts and calls.</p>
-    <p><strong>On the cruise ship:</strong> Turn off both your T-Mobile roaming AND the Saily eSIM while at sea. Use ship Wi-Fi only — maritime roaming on any carrier is extremely expensive.</p>
-  </div>
-  <div class="info-panel">
-    <h3>T-Mobile international coverage</h3>
-    <p>T-Mobile Magenta and higher plans include <strong>free data and texting in Italy, Greece, and Turkey</strong> (data at 2G speeds — good for maps and messages). With the Saily eSIM active, you'll have full-speed data and can keep T-Mobile as a backup.</p>
-    <p><strong>Offline maps:</strong> Download Google Maps offline regions for Rome, Santorini, Mykonos, Kusadasi/Ephesus, and Naples before leaving home. Works with no signal.</p>
-  </div>
-  <div class="info-panel">
-    <h3>How to call international numbers</h3>
-    <p>Just dial the number exactly as printed — your smartphone handles country codes automatically. Example: <strong>+39 06 480231</strong> (Monti Palace) — just tap and call.</p>
-    <p>Country codes: Italy <strong>+39</strong> · Greece <strong>+30</strong> · Turkey <strong>+90</strong>. All work the same way from your phone.</p>
+      <p class="subhead">Emergency contacts</p>
+      <div class="actions-card" style="margin-top:0">
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>Royal Caribbean (general)</strong> — +1 800 327 6700</div></div>
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>Air2Sea day-of-travel disruptions</strong> — +1 800 256 6649 or +1 305 539 4107</div></div>
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>Air Canada (day of travel)</strong> — 1 888 247 2262 · Confirmation: CP3SHV / ITCWHV</div></div>
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>Delta (day of travel)</strong> — 1 800 221 1212 · Confirmation: GTASLX / MLHUAO</div></div>
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>Monti Palace Hotel, Rome</strong> — +39 06 480231 · info@montipalacehotel.com</div></div>
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>Lido di Ostia hotel</strong> — +39 328 0262923 · cgalberti@libero.it</div></div>
+        <div class="action-item"><div class="action-dot dot-info">📞</div><div class="action-text"><strong>GenVisa (visa assistance)</strong> — +1 800 845 8968 · rci@genvisa.com · genvisa.com/rci</div></div>
+      </div>
+
+      <p class="subhead" id="phone">📱 Saily eSIM — recommended for full-speed data</p>
+      <div class="info-panel" style="margin-top:0">
+        <p><strong>Download the Saily app</strong> (iOS or Android) before you leave and purchase the <strong>Europe unlimited data eSIM plan</strong>. This gives you fast LTE/5G data across all your ports — Italy, Greece, Turkey — without touching your T-Mobile plan or risking roaming charges.</p>
+        <p><strong>How it works:</strong> Saily installs a virtual SIM alongside your regular one. When you land in Europe, activate it and your phone uses Saily's data automatically. Your US number still works for texts and calls.</p>
+        <p><strong>On the cruise ship:</strong> Turn off both your T-Mobile roaming AND the Saily eSIM while at sea. Use ship Wi-Fi only — maritime roaming on any carrier is extremely expensive.</p>
+      </div>
+
+      <p class="subhead">T-Mobile & offline maps</p>
+      <div class="info-panel" style="margin-top:0">
+        <p>T-Mobile Magenta and higher plans include <strong>free data and texting in Italy, Greece, and Turkey</strong> (data at 2G speeds). With the Saily eSIM active, you'll have full-speed data and can keep T-Mobile as a backup.</p>
+        <p><strong>Offline maps:</strong> Download Google Maps offline regions for Rome, Santorini, Mykonos, Kusadasi/Ephesus, and Naples before leaving home. Works with no signal.</p>
+      </div>
+
+      <p class="subhead">Calling international numbers</p>
+      <div class="info-panel" style="margin-top:0">
+        <p>Just dial the number exactly as printed — your smartphone handles country codes automatically. Example: <strong>+39 06 480231</strong> (Monti Palace) — just tap and call.</p>
+        <p>Country codes: Italy <strong>+39</strong> · Greece <strong>+30</strong> · Turkey <strong>+90</strong>.</p>
+      </div>
+
+    </div>
   </div>
 
   <!-- VAT RECLAIM -->
