@@ -920,7 +920,7 @@
   <a href="#contacts">📞 Contacts</a>
   <a href="#phone">📱 Phone</a>
   <a href="#vat">💶 VAT</a>
-  <a href="#mom">❤️ For Mom</a>
+  <a href="#mom" onclick="collapseAllForMom()">❤️ For Mom</a>
 </nav>
 
 <div class="hero">
@@ -2271,16 +2271,58 @@
     <div class="day-header" onclick="toggle('c-mom')">
       <div class="day-icon" style="background:#FBE8F0;color:#883355">❤️</div>
       <div class="day-text">
-        <div class="day-title">For Mom — while we're away</div>
-        <div class="day-sub">June 4–15, 2026 · More details coming soon</div>
+        <div class="day-title">For Mom — Joanne's care while we're away</div>
+        <div class="day-sub">June 4–15, 2026 · Cat care instructions</div>
       </div>
       <span class="chevron">⌄</span>
     </div>
     <div class="day-body">
+
       <div class="callout callout-info">
-        <span class="callout-icon">ℹ</span>
-        Kiel will add details here before we leave. Check back soon!
+        <span class="callout-icon">🐱</span>
+        Thank you so much for watching Joanne! Everything she needs is in the kitchen. Don't hesitate to reach out — Kiel: <strong>602-284-8619</strong>
       </div>
+
+      <p class="subhead">💊 Medication — Prednisolone Suspension 3mg/ml</p>
+      <div class="transport-block">
+        <div class="transport-title">Dosing schedule — follow in order</div>
+        <div class="transport-option">
+          <span class="to-badge to-best">Days 1–3</span>
+          <span class="to-text"><strong>1 mL by mouth every 12 hours</strong> — morning and evening, twice a day</span>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-fast">Days 4–6</span>
+          <span class="to-text"><strong>1 mL by mouth every 24 hours</strong> — once a day</span>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-cheap">Days 7+</span>
+          <span class="to-text"><strong>1 mL by mouth every other day</strong> — until the bottle is gone</span>
+        </div>
+      </div>
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠</span>
+        The small squeeze bottle labeled <strong>"Prednisolone"</strong> on the counter is what you use to give the dose — draw 1 mL and squirt it gently into the side of Joanne's mouth. The big green bottle is the refill supply.
+      </div>
+
+      <p class="subhead">🍽 Food — Hill's Science Diet</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        Sensitive Stomach &amp; Skin Adult wet food pouches — <strong>Salmon &amp; Tuna</strong> or <strong>Chicken &amp; Beef</strong><br>
+        Give her one pouch per feeding. She can have both flavors — alternate or mix as you like.<br>
+        Fresh water should always be available.
+      </div>
+
+      <p class="subhead">📍 Where things are</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        🟢 Prednisolone (small squeeze bottle + big green refill bottle) — on the kitchen counter<br>
+        🟡 Food pouches — kitchen area<br>
+      </div>
+
+      <p class="subhead">📞 Emergency contacts</p>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
+        <strong>Kiel</strong> — 602-284-8619 · kprevenew@gmail.com<br>
+        <strong>Joanne's vet</strong> — 1500 W Rio Salado Pkwy, Mesa AZ 85201 · Patient ID: 410044908
+      </div>
+
     </div>
   </div>
 
@@ -2348,6 +2390,21 @@
   // ── DAY CARD TOGGLE ────────────────────────────────────────────────────────
   function toggle(id) {
     document.getElementById(id).classList.toggle('open');
+  }
+
+  // Collapse everything else, open For Mom, scroll to it
+  function collapseAllForMom() {
+    const allSections = [
+      'boarding-docs','c-before','c-pack-interactive','c-mary-pack',
+      'c-section-rome','c-d1','c-d2','c-d3',
+      'c-section-cruise','c-d4','c-d5','c-d6','c-d7','c-d8','c-d9','c-d10','c-d11','c-d12'
+    ];
+    allSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('open');
+    });
+    const mom = document.getElementById('c-mom');
+    if (mom) mom.classList.add('open');
   }
 
   // ── NOTES (localStorage) ───────────────────────────────────────────────────
