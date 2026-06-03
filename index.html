@@ -311,6 +311,95 @@
   }
   .pack-master-check input { accent-color: var(--sea); width: 13px; height: 13px; cursor: pointer; }
 
+  /* TAB SWITCHER */
+  .tab-bar {
+    display: flex;
+    background: var(--ink);
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 44px;
+    z-index: 90;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    color: rgba(247,244,238,0.45);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* MOM TAB */
+  .mom-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+  }
+  .mom-hero {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .mom-hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+  .mom-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 8vw, 52px);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .mom-hero-sub {
+    font-size: 13px;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  /* MOM VIDEO */
+  .mom-video-wrap { margin: 8px 0 16px; }
+  .mom-video-poster {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .mom-video-poster:hover { opacity: 0.88; }
+  .mom-video-play {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    padding-left: 4px;
+  }
+  .mom-video-label {
+    font-size: 12px;
+    color: rgba(247,244,238,0.55);
+    letter-spacing: 0.04em;
+  }
+
   /* PIN GATE */
   #pin-gate {
     background: var(--ink);
@@ -990,8 +1079,13 @@
   <a href="#cruise">⚓ Cruise</a>
   <a href="#contacts">📞 Contacts & Phone</a>
   <a href="#vat">💶 VAT</a>
-  <a href="#mom" onclick="collapseAllForMom()">❤️ For Mom</a>
 </nav>
+
+<!-- TAB SWITCHER -->
+<div class="tab-bar">
+  <button class="tab-btn active" id="tab-btn-trip" onclick="switchTab('trip')">✈️ Our Trip</button>
+  <button class="tab-btn" id="tab-btn-mom" onclick="switchTab('mom')">❤️ For Mom</button>
+</div>
 
 <div class="hero">
   <p class="hero-eyebrow">Mediterranean Honeymoon · June 2026</p>
@@ -1041,6 +1135,7 @@
   </div>
 </div>
 
+<div id="tab-trip" class="tab-panel">
 <div class="container">
 
   <!-- DOCUMENTS -->
@@ -2151,89 +2246,103 @@
     </div>
   </div>
 
-</div>
+</div><!-- /container -->
+</div><!-- /tab-trip -->
 
-  <!-- FOR MOM -->
-  <p class="section-label" id="mom">For Mom</p>
-  <div class="day-card open" id="c-mom">
-    <div class="day-header" onclick="toggle('c-mom')">
-      <div class="day-icon" style="background:#FBE8F0;color:#883355">❤️</div>
-      <div class="day-text">
-        <div class="day-title">For Mom — Joanne & Boaty while we're away</div>
-        <div class="day-sub">June 4–15, 2026 · Cat care instructions</div>
-      </div>
-      <span class="chevron">⌄</span>
+<!-- FOR MOM TAB -->
+<div id="tab-mom" class="tab-panel" style="display:none">
+  <div class="mom-wrap">
+
+    <div class="mom-hero">
+      <div class="mom-hero-eyebrow">While we're away · Jun 4–15</div>
+      <div class="mom-hero-title">Hey Mom 🐱</div>
+      <div class="mom-hero-sub">Everything you need for Joanne & Boaty is right here</div>
     </div>
-    <div class="day-body">
 
-      <div class="callout callout-info">
-        <span class="callout-icon">🐱</span>
-        Thank you so much for watching Joanne and Boaty! Everything they need is in the kitchen. Don't hesitate to reach out — best way to reach Kiel is <strong>Instagram messenger (@kprevenew)</strong>
-      </div>
-
-      <p class="subhead">💊 Medications — 2 total</p>
-      <div class="transport-block">
-        <div class="transport-title">① Prednisolone Suspension 3mg/ml — steroid (new)</div>
-        <div class="transport-option">
-          <span class="to-badge to-best">Thu · Fri · Sat</span>
-          <span class="to-text"><strong>1 mL by mouth once a day</strong> — give every day Thursday, Friday, and Saturday</span>
-        </div>
-        <div class="transport-option">
-          <span class="to-badge to-cheap">Sun onward</span>
-          <span class="to-text"><strong>1 mL by mouth every other day</strong> — skip a day in between, until the bottle is gone</span>
-        </div>
-      </div>
-      <div class="transport-block" style="margin-top:8px">
-        <div class="transport-title">② Cetirizine — antihistamine (ongoing)</div>
-        <div class="transport-option">
-          <span class="to-badge to-best">Daily</span>
-          <span class="to-text"><strong>1 mL by mouth once a day</strong> — small clear bottle on the counter</span>
-        </div>
-      </div>
-      <div class="callout callout-warn" style="margin-top:10px">
-        <span class="callout-icon">⚠</span>
-        Both bottles are on the kitchen counter. Draw 1 mL from the small squeeze bottle labeled <strong>"Prednisolone"</strong> and 1 mL from the smaller clear <strong>Cetirizine</strong> bottle — mix both into a small portion of her food. The big green bottle is the Prednisolone refill supply.
-      </div>
-
-      <div class="callout callout-tip-pink" style="margin-top:10px;border-radius:8px;padding:10px 12px;font-size:12px;display:flex;gap:8px;align-items:flex-start">
-        <span class="callout-icon">💡</span>
-        <span><strong>Best practice for meds:</strong> Mix the medicine into a small amount of food and let Joanne eat that first — give her about 5 minutes. Once she's finished, it's fine to give her the rest of her food.</span>
-      </div>
-
-      <p class="subhead">🐈 Boaty</p>
-      <div class="callout callout-info" style="margin-bottom:8px">
-        <span class="callout-icon">🐟</span>
-        Boaty doesn't need any medication — just make sure she gets <strong>her own food</strong>. She's on a weight loss diet so keep her food separate from Joanne's and don't let them eat each other's.
-      </div>
-
-      <p class="subhead">📍 Where things are</p>
-      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
-        🟢 Prednisolone (small squeeze bottle + big green refill bottle) — on the kitchen counter<br>
-        🔵 Cetirizine (small clear bottle) — on the kitchen counter<br>
-        🐈 Boaty's weight loss food — keep separate from Joanne's<br>
-      </div>
-
-      <p class="subhead">📞 Emergency contacts</p>
-      <div style="font-size:12px;color:var(--ink-mid);line-height:2;padding:8px 0">
-        <strong>Kiel</strong> — best reached via <strong>Instagram messenger (@kprevenew)</strong> · also 602-284-8619 · kprevenew@gmail.com<br>
-        <strong>Joanne's vet</strong> — Lovet Pet Health Care – Dobson Ranch · 2917 S Dobson Rd #102, Mesa AZ 85202 · (480) 838-2503 · lovet.com · Patient ID: 410044908
-      </div>
-
-      <p class="subhead">📸 Reference photos</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0">
-        <div>
-          <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">Medications</p>
-          <img src="joanne-meds.jpg" alt="Prednisolone bottles" style="width:100%;border-radius:8px;border:0.5px solid var(--border)">
-        </div>
-        <div>
-          <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">Where they live on the counter</p>
-          <img src="joanne-counter.jpg" alt="Kitchen counter with meds" style="width:100%;border-radius:8px;border:0.5px solid var(--border)">
-        </div>
-      </div>
-
+    <div class="callout callout-info" style="margin-bottom:16px">
+      <span class="callout-icon">🐱</span>
+      Thank you so much for watching Joanne and Boaty! Everything they need is in the kitchen. Best way to reach Kiel is <strong>Instagram messenger (@kprevenew)</strong>
     </div>
+
+    <!-- MEDICATIONS -->
+    <p class="subhead" style="margin-top:0">💊 Medications — Joanne (2 total)</p>
+    <div class="transport-block">
+      <div class="transport-title">① Prednisolone Suspension 3mg/ml — steroid (new)</div>
+      <div class="transport-option">
+        <span class="to-badge to-best">Thu · Fri · Sat</span>
+        <span class="to-text"><strong>1 mL mixed into food once a day</strong> — every day Thursday, Friday, and Saturday</span>
+      </div>
+      <div class="transport-option">
+        <span class="to-badge to-cheap">Sun onward</span>
+        <span class="to-text"><strong>1 mL mixed into food every other day</strong> — skip a day in between, until the bottle is gone</span>
+      </div>
+    </div>
+    <div class="transport-block" style="margin-top:8px">
+      <div class="transport-title">② Cetirizine — antihistamine (ongoing)</div>
+      <div class="transport-option">
+        <span class="to-badge to-best">Daily</span>
+        <span class="to-text"><strong>1 mL mixed into food once a day</strong> — small clear bottle on the counter</span>
+      </div>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:10px">
+      <span class="callout-icon">⚠</span>
+      Both bottles are on the kitchen counter. Mix both 1 mL doses into a small portion of Joanne's food. The big green bottle is the Prednisolone refill.
+    </div>
+
+    <div class="callout callout-tip-pink" style="margin-top:8px;border-radius:8px;padding:10px 12px;font-size:12px;display:flex;gap:8px;align-items:flex-start">
+      <span class="callout-icon">💡</span>
+      <span><strong>Best practice:</strong> Give Joanne a small amount of food with the medicine mixed in and let her eat that first (~5 mins). Then give her the rest of her meal.</span>
+    </div>
+
+    <!-- VIDEO -->
+    <p class="subhead">🎥 Medication walk-through video</p>
+    <div class="mom-video-wrap" id="video-wrap">
+      <div class="mom-video-poster" onclick="loadMomVideo()">
+        <div class="mom-video-play">▶</div>
+        <div class="mom-video-label">Tap to watch — shows exactly how to give the medicine</div>
+      </div>
+      <video id="mom-video" controls style="display:none;width:100%;border-radius:10px"></video>
+    </div>
+
+    <!-- BOATY -->
+    <p class="subhead">🐈 Boaty</p>
+    <div class="callout callout-info">
+      <span class="callout-icon">🐟</span>
+      Boaty doesn't need any medication — just make sure she gets <strong>her own food</strong>. She's on a weight loss diet so keep her food separate from Joanne's.
+    </div>
+
+    <!-- WHERE THINGS ARE -->
+    <p class="subhead">📍 Where things are</p>
+    <div style="font-size:13px;color:var(--ink-mid);line-height:2.2;padding:8px 0">
+      🟢 Prednisolone (small squeeze bottle + big green refill) — kitchen counter<br>
+      🔵 Cetirizine (small clear bottle) — kitchen counter<br>
+      🐈 Boaty's weight loss food — keep separate from Joanne's
+    </div>
+
+    <!-- PHOTOS -->
+    <p class="subhead">📸 Reference photos</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 16px">
+      <div>
+        <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Medications</p>
+        <img src="joanne-meds.jpg" alt="Prednisolone bottles" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
+      </div>
+      <div>
+        <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Counter location</p>
+        <img src="joanne-counter.jpg" alt="Kitchen counter with meds" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
+      </div>
+    </div>
+
+    <!-- CONTACTS -->
+    <p class="subhead">📞 Emergency contacts</p>
+    <div style="font-size:13px;color:var(--ink-mid);line-height:2.2;padding:8px 0 24px">
+      <strong>Kiel</strong> — Instagram <strong>@kprevenew</strong> · 602-284-8619 · kprevenew@gmail.com<br>
+      <strong>Joanne's vet</strong> — Lovet Pet Health Care – Dobson Ranch<br>
+      2917 S Dobson Rd #102, Mesa AZ 85202 · (480) 838-2503 · lovet.com<br>
+      Patient ID: 410044908
+    </div>
+
   </div>
-
 </div>
 
 <footer>
@@ -2509,6 +2618,27 @@
       localStorage.removeItem('honeymoon_pack_' + item.id);
     }));
     buildPacking();
+  }
+
+  // ── TABS ───────────────────────────────────────────────────────────────────
+  function switchTab(tab) {
+    const isTrip = tab === 'trip';
+    document.getElementById('tab-trip').style.display = isTrip ? '' : 'none';
+    document.getElementById('tab-mom').style.display  = isTrip ? 'none' : '';
+    document.getElementById('tab-btn-trip').classList.toggle('active', isTrip);
+    document.getElementById('tab-btn-mom').classList.toggle('active', !isTrip);
+    document.querySelector('.top-nav').style.display = isTrip ? '' : 'none';
+    window.scrollTo(0, 0);
+  }
+
+  // ── LAZY VIDEO ─────────────────────────────────────────────────────────────
+  function loadMomVideo() {
+    const poster = document.querySelector('.mom-video-poster');
+    const video  = document.getElementById('mom-video');
+    video.src = 'joanne-meds-video.mp4';
+    poster.style.display = 'none';
+    video.style.display  = '';
+    video.play();
   }
 
   // ── PIN GATE ───────────────────────────────────────────────────────────────
