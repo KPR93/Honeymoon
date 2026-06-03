@@ -2236,9 +2236,14 @@
   <!-- PHONE GUIDE -->
   <p class="section-label" id="phone">Phone & calling guide</p>
   <div class="info-panel">
+    <h3>📱 Saily eSIM — recommended for full-speed data</h3>
+    <p><strong>Download the Saily app</strong> (iOS or Android) before you leave and purchase the <strong>Europe unlimited data eSIM plan</strong>. This gives you fast LTE/5G data across all your ports — Italy, Greece, Turkey — without touching your T-Mobile plan or risking roaming charges.</p>
+    <p><strong>How it works:</strong> Saily installs a virtual SIM alongside your regular one. When you land in Europe, activate it and your phone uses Saily's data automatically. Your US number still works for texts and calls.</p>
+    <p><strong>On the cruise ship:</strong> Turn off both your T-Mobile roaming AND the Saily eSIM while at sea. Use ship Wi-Fi only — maritime roaming on any carrier is extremely expensive.</p>
+  </div>
+  <div class="info-panel">
     <h3>T-Mobile international coverage</h3>
-    <p>T-Mobile Magenta and higher plans include <strong>free data and texting in Italy, Greece, and Turkey</strong> (data at 2G speeds — good for maps and messages). Calls cost $0.25/min, or use Wi-Fi Calling for free. Confirm your specific plan at T-Mobile.com before leaving.</p>
-    <p><strong>On the cruise ship:</strong> Turn off cellular roaming entirely and use ship Wi-Fi for everything. Ship roaming charges are extremely high.</p>
+    <p>T-Mobile Magenta and higher plans include <strong>free data and texting in Italy, Greece, and Turkey</strong> (data at 2G speeds — good for maps and messages). With the Saily eSIM active, you'll have full-speed data and can keep T-Mobile as a backup.</p>
     <p><strong>Offline maps:</strong> Download Google Maps offline regions for Rome, Santorini, Mykonos, Kusadasi/Ephesus, and Naples before leaving home. Works with no signal.</p>
   </div>
   <div class="info-panel">
@@ -2407,15 +2412,9 @@
 
   // Collapse everything else, open For Mom, scroll to it
   function collapseAllForMom() {
-    const allSections = [
-      'boarding-docs','c-before','c-pack-interactive','c-mary-pack',
-      'c-section-rome','c-d1','c-d2','c-d3',
-      'c-section-cruise','c-d4','c-d5','c-d6','c-d7','c-d8','c-d9','c-d10','c-d11','c-d12'
-    ];
-    allSections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.classList.remove('open');
-    });
+    // Collapse every collapsible card on the page
+    document.querySelectorAll('.day-card').forEach(el => el.classList.remove('open'));
+    // Open just the For Mom card
     const mom = document.getElementById('c-mom');
     if (mom) mom.classList.add('open');
   }
