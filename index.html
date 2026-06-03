@@ -311,6 +311,63 @@
   }
   .pack-master-check input { accent-color: var(--sea); width: 13px; height: 13px; cursor: pointer; }
 
+  /* PIN GATE */
+  #pin-gate {
+    background: var(--ink);
+    border-radius: 16px;
+    margin: 0 0 12px;
+    padding: 36px 24px 32px;
+    text-align: center;
+  }
+  .pin-gate-inner { max-width: 280px; margin: 0 auto; }
+  .pin-gate-icon { font-size: 36px; margin-bottom: 10px; }
+  .pin-gate-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--cream); margin-bottom: 4px; }
+  .pin-gate-sub { font-size: 12px; color: rgba(247,244,238,0.5); letter-spacing: 0.06em; margin-bottom: 24px; }
+  .pin-dots { display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; }
+  .pin-dots span {
+    width: 14px; height: 14px; border-radius: 50%;
+    border: 1.5px solid rgba(184,149,106,0.5);
+    background: transparent;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pin-dots span.filled { background: var(--gold); border-color: var(--gold); }
+  .pin-pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+  .pin-key {
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .pin-key:hover { background: rgba(184,149,106,0.2); }
+  .pin-key:active { background: rgba(184,149,106,0.35); }
+  .pin-clear { font-size: 18px; }
+  .pin-submit { background: rgba(184,149,106,0.2); color: var(--gold); font-size: 18px; }
+  .pin-submit:hover { background: rgba(184,149,106,0.35); }
+  .pin-error { font-size: 12px; color: var(--rose); min-height: 18px; letter-spacing: 0.04em; }
+  .pin-shake { animation: pinShake 0.35s ease; }
+  @keyframes pinShake {
+    0%,100% { transform: translateX(0); }
+    20%      { transform: translateX(-6px); }
+    40%      { transform: translateX(6px); }
+    60%      { transform: translateX(-4px); }
+    80%      { transform: translateX(4px); }
+  }
+  .pin-lock-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-bottom: 12px; padding: 6px 14px;
+    background: rgba(26,23,20,0.06); border: 0.5px solid var(--border);
+    border-radius: 999px; font-size: 11px; color: var(--ink-light);
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .pin-lock-btn:hover { background: var(--rose-light); color: var(--rose); border-color: rgba(168,92,92,0.3); }
+
   /* STICKY NAV */
   .top-nav {
     position: sticky;
@@ -989,6 +1046,35 @@
   <!-- DOCUMENTS -->
   <p class="section-label" id="docs">Documents</p>
 
+  <!-- PIN GATE -->
+  <div id="pin-gate">
+    <div class="pin-gate-inner">
+      <div class="pin-gate-icon">🔒</div>
+      <div class="pin-gate-title">Boarding documents</div>
+      <div class="pin-gate-sub">Enter your 4-digit PIN to view</div>
+      <div class="pin-dots" id="pin-dots">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="pin-pad">
+        <button class="pin-key" onclick="pinKey('1')">1</button>
+        <button class="pin-key" onclick="pinKey('2')">2</button>
+        <button class="pin-key" onclick="pinKey('3')">3</button>
+        <button class="pin-key" onclick="pinKey('4')">4</button>
+        <button class="pin-key" onclick="pinKey('5')">5</button>
+        <button class="pin-key" onclick="pinKey('6')">6</button>
+        <button class="pin-key" onclick="pinKey('7')">7</button>
+        <button class="pin-key" onclick="pinKey('8')">8</button>
+        <button class="pin-key" onclick="pinKey('9')">9</button>
+        <button class="pin-key pin-clear" onclick="pinClear()">⌫</button>
+        <button class="pin-key" onclick="pinKey('0')">0</button>
+        <button class="pin-key pin-submit" onclick="pinSubmit()">✓</button>
+      </div>
+      <div class="pin-error" id="pin-error"></div>
+    </div>
+  </div>
+
+  <div id="pin-content" style="display:none">
+
   <div class="setsail-grid">
     <div class="setsail-card">
       <div class="setsail-rc">⚓ Royal Caribbean · SetSail Pass</div>
@@ -1150,7 +1236,7 @@
     </div>
   </div>
 
-  <!-- BEFORE YOU GO -->
+  </div><!-- /pin-content -->
 
   <!-- PACKING CHECKLIST -->
   <p class="section-label" id="packing">Packing checklist</p>
@@ -2523,6 +2609,62 @@
       localStorage.removeItem('honeymoon_pack_' + item.id);
     }));
     buildPacking();
+  }
+
+  // ── PIN GATE ───────────────────────────────────────────────────────────────
+  const PIN_CORRECT = '1010';
+  let pinEntry = '';
+
+  function pinKey(digit) {
+    if (pinEntry.length >= 4) return;
+    pinEntry += digit;
+    updatePinDots();
+    if (pinEntry.length === 4) setTimeout(pinSubmit, 120);
+  }
+
+  function pinClear() {
+    pinEntry = pinEntry.slice(0, -1);
+    updatePinDots();
+    document.getElementById('pin-error').textContent = '';
+  }
+
+  function updatePinDots() {
+    document.querySelectorAll('#pin-dots span').forEach((dot, i) => {
+      dot.classList.toggle('filled', i < pinEntry.length);
+    });
+  }
+
+  function pinSubmit() {
+    if (pinEntry === PIN_CORRECT) {
+      document.getElementById('pin-gate').style.display = 'none';
+      const content = document.getElementById('pin-content');
+      content.style.display = '';
+      // Add a lock button above the content
+      const lockBtn = document.createElement('button');
+      lockBtn.className = 'pin-lock-btn';
+      lockBtn.innerHTML = '🔒 Lock documents';
+      lockBtn.onclick = pinLock;
+      content.insertBefore(lockBtn, content.firstChild);
+    } else {
+      document.getElementById('pin-error').textContent = 'Incorrect PIN — try again';
+      document.getElementById('pin-gate').querySelector('.pin-gate-inner').classList.add('pin-shake');
+      setTimeout(() => {
+        document.getElementById('pin-gate').querySelector('.pin-gate-inner').classList.remove('pin-shake');
+      }, 400);
+      pinEntry = '';
+      updatePinDots();
+    }
+  }
+
+  function pinLock() {
+    document.getElementById('pin-content').style.display = 'none';
+    document.getElementById('pin-gate').style.display = '';
+    pinEntry = '';
+    updatePinDots();
+    document.getElementById('pin-error').textContent = '';
+    // Remove lock button
+    const btn = document.getElementById('pin-content').querySelector('.pin-lock-btn');
+    if (btn) btn.remove();
   }
 
   // ── INIT ───────────────────────────────────────────────────────────────────
