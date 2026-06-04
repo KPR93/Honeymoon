@@ -1070,6 +1070,13 @@
   }
   footer em { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); }
 
+  /* CAT SELECTOR */
+  .cat-btn { transition: all 0.2s; }
+  .cat-btn img { transition: border-color 0.2s; }
+  .cat-btn.active img { border-color: var(--gold) !important; }
+  .cat-btn:not(.active) img { opacity: 0.6; }
+  .cat-btn:not(.active):hover img { opacity: 0.8; }
+
   /* MOBILE OPTIMIZATIONS */
   @media (max-width: 768px) {
     body { font-size: 16px; }
@@ -2396,107 +2403,131 @@
       <div class="mom-hero-sub">Everything you need for Joanne & Boaty is right here</div>
     </div>
 
-    <div class="callout callout-info" style="margin-bottom:16px">
+    <div class="callout callout-info" style="margin-bottom:20px">
       <span class="callout-icon">🐱</span>
       Thank you so much for watching Joanne and Boaty! Everything they need is in the kitchen. Best way to reach Kiel is <strong>Instagram messenger (@kprevenew)</strong>
     </div>
 
-    <!-- MEDICATIONS -->
-    <p class="subhead" style="margin-top:0">💊 Medications — Joanne (2 total)</p>
-    <div class="transport-block">
-      <div class="transport-title">① Prednisolone Suspension 3mg/ml — steroid (new)</div>
-      <div class="transport-option">
-        <span class="to-badge to-best">Thu · Fri · Sat</span>
-        <span class="to-text"><strong>1 mL mixed into food once a day</strong> — every day Thursday, Friday, and Saturday</span>
+    <!-- CAT SELECTOR -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px">
+      <button class="cat-btn active" id="cat-joanne" onclick="selectCat('joanne')" style="cursor:pointer;background:none;border:none;padding:0;text-align:center">
+        <img src="joanne-image.jpg" alt="Joanne" style="width:100%;border-radius:12px;border:2px solid var(--gold);margin-bottom:8px">
+        <div style="font-size:18px;font-weight:500;color:var(--ink)">Joanne</div>
+      </button>
+      <button class="cat-btn" id="cat-boaty" onclick="selectCat('boaty')" style="cursor:pointer;background:none;border:none;padding:0;text-align:center">
+        <img src="boaty-image.jpg" alt="Boaty" style="width:100%;border-radius:12px;border:2px solid var(--ink-light);margin-bottom:8px">
+        <div style="font-size:18px;font-weight:500;color:var(--ink)">Boaty</div>
+      </button>
+    </div>
+
+    <!-- JOANNE TAB -->
+    <div id="cat-joanne-content">
+      <p class="subhead" style="margin-top:0">💊 Joanne's Daily Medication Schedule</p>
+
+      <table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:13px">
+        <tr style="border-bottom:1px solid var(--border)">
+          <th style="text-align:left;padding:10px;background:var(--gold-pale);color:var(--ink);font-weight:500">Date</th>
+          <th style="text-align:left;padding:10px;background:var(--gold-pale);color:var(--ink);font-weight:500">Prednisolone</th>
+          <th style="text-align:left;padding:10px;background:var(--gold-pale);color:var(--ink);font-weight:500">Cetirizine</th>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 2 (Tue)</td><td style="padding:10px">1mL 2× daily</td><td style="padding:10px">—</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 3 (Wed)</td><td style="padding:10px">1mL 2× daily</td><td style="padding:10px">—</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 4 (Thu)</td><td style="padding:10px">1mL 1× daily</td><td style="padding:10px">—</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 5 (Fri)</td><td style="padding:10px"><strong>OFF</strong></td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 6 (Sat)</td><td style="padding:10px">1mL 1× daily</td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 7 (Sun)</td><td style="padding:10px"><strong>OFF</strong></td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 8 (Mon)</td><td style="padding:10px">1mL 1× daily</td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 9 (Tue)</td><td style="padding:10px"><strong>OFF</strong></td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 10 (Wed)</td><td style="padding:10px">1mL 1× daily</td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 11 (Thu)</td><td style="padding:10px"><strong>OFF</strong></td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 12 (Fri)</td><td style="padding:10px">1mL 1× daily</td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 13 (Sat)</td><td style="padding:10px"><strong>OFF</strong></td><td style="padding:10px">1mL daily</td></tr>
+        <tr style="border-bottom:0.5px solid var(--border)"><td style="padding:10px">Jun 14 (Sun)</td><td style="padding:10px">1mL 1× daily</td><td style="padding:10px">1mL daily</td></tr>
+        <tr><td style="padding:10px">Jun 15 (Mon)</td><td style="padding:10px"><strong>OFF</strong></td><td style="padding:10px">—</td></tr>
+      </table>
+
+      <div class="callout callout-tip-pink" style="margin:12px 0;border-radius:8px;padding:10px 12px;font-size:12px;display:flex;gap:8px;align-items:flex-start">
+        <span class="callout-icon">💡</span>
+        <span><strong>Best practice:</strong> Give Joanne a small amount of food with medicine mixed in and let her eat that first (~5 mins). Then give her the rest of her meal.</span>
       </div>
-      <div class="transport-option">
-        <span class="to-badge to-cheap">Sun onward</span>
-        <span class="to-text"><strong>1 mL mixed into food every other day</strong> — skip a day in between, until the bottle is gone</span>
+
+      <!-- VIDEO -->
+      <p class="subhead">🎥 Medication walk-through video</p>
+      <div class="mom-video-wrap">
+        <video controls playsinline style="width:100%;height:auto;border-radius:10px;background:#000">
+          <source src="joanne-meds-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
-    </div>
-    <div class="transport-block" style="margin-top:8px">
-      <div class="transport-title">② Cetirizine — antihistamine (ongoing)</div>
-      <div class="transport-option">
-        <span class="to-badge to-best">Daily</span>
-        <span class="to-text"><strong>1 mL mixed into food once a day</strong> — small clear bottle on the counter</span>
-      </div>
-    </div>
 
-    <div class="callout callout-warn" style="margin-top:10px">
-      <span class="callout-icon">⚠</span>
-      Both bottles are on the kitchen counter. Mix both 1 mL doses into a small portion of Joanne's food. The big green bottle is the Prednisolone refill.
-    </div>
-
-    <div class="callout callout-tip-pink" style="margin-top:8px;border-radius:8px;padding:10px 12px;font-size:12px;display:flex;gap:8px;align-items:flex-start">
-      <span class="callout-icon">💡</span>
-      <span><strong>Best practice:</strong> Give Joanne a small amount of food with the medicine mixed in and let her eat that first (~5 mins). Then give her the rest of her meal.</span>
-    </div>
-
-    <!-- VIDEO -->
-    <p class="subhead">🎥 Medication walk-through video</p>
-    <div class="mom-video-wrap">
-      <video controls playsinline preload="metadata" style="width:100%;height:auto;border-radius:10px;background:#000">
-        <source src="joanne-meds-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-    <!-- BOATY -->
-    <p class="subhead">🐈 Boaty — food & treats</p>
-    <div class="callout callout-info" style="margin-bottom:8px">
-      <span class="callout-icon">🐱</span>
-      Boaty is on a weight loss diet — keep her food separate from Joanne's and don't let them eat each other's.
-    </div>
-    <div class="transport-block">
-      <div class="transport-title">Daily treat schedule</div>
-      <div class="transport-option">
-        <span class="to-badge to-best">Immune Support</span>
-        <span class="to-text"><strong>7 treats per day</strong> — smaller Lysine treats (immune support)</span>
-      </div>
-      <div class="transport-option">
-        <span class="to-badge to-fast">Calm & Confident</span>
-        <span class="to-text"><strong>2 treats per day</strong> — anxiety support treats</span>
-      </div>
-    </div>
-    <div class="callout callout-info" style="margin-top:8px">
-      <span class="callout-icon">💡</span>
-      Treats can be given throughout the day — scatter them or give with her meals. Don't mix them in with Joanne's food.
-    </div>
-
-    <div class="callout callout-warn">
-      <span class="callout-icon">⚠</span>
-      <strong>Food bowl placement — KEEP IT ON THE FLOOR:</strong> Boaty likes to smack her food bowl off high surfaces, so always place her food bowl on the bottom/lowest surface. Never put it on a table, counter, or raised platform — she will knock it over!
-    </div>
-
-    <!-- WHERE THINGS ARE -->
-    <p class="subhead">📍 Where things are</p>
-    <div style="font-size:13px;color:var(--ink-mid);line-height:2.2;padding:8px 0">
-      🟢 Prednisolone (small squeeze bottle + big green refill) — kitchen counter<br>
-      🔵 Cetirizine (small clear bottle) — kitchen counter<br>
-      🐈 Boaty's weight loss food — keep separate from Joanne's<br>
-      🟤 Boaty's treats: Immune Support Lysine (7/day) + Calm & Confident (2/day) — kitchen
-    </div>
-
-    <!-- PHOTOS -->
-    <p class="subhead">📸 Reference photos</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 16px">
-      <div>
-        <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Medications</p>
-        <img src="joanne-meds.jpg" alt="Prednisolone bottles" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
-      </div>
-      <div>
-        <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Counter location</p>
-        <img src="joanne-counter.jpg" alt="Kitchen counter with meds" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
+      <!-- JOANNE PHOTOS -->
+      <p class="subhead">📸 Reference photos</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 16px">
+        <div>
+          <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Medications</p>
+          <img src="joanne-meds.jpg" alt="Prednisolone bottles" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
+        </div>
+        <div>
+          <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Counter location</p>
+          <img src="joanne-counter.jpg" alt="Kitchen counter with meds" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
+        </div>
       </div>
     </div>
 
-    <!-- CONTACTS -->
-    <p class="subhead">📞 Emergency contacts</p>
-    <div style="font-size:13px;color:var(--ink-mid);line-height:2.2;padding:8px 0 24px">
-      <strong>Kiel</strong> — Instagram <strong>@kprevenew</strong> · 602-284-8619 · kprevenew@gmail.com<br>
-      <strong>Joanne's vet</strong> — Lovet Pet Health Care – Dobson Ranch<br>
-      2917 S Dobson Rd #102, Mesa AZ 85202 · (480) 838-2503 · lovet.com<br>
-      Patient ID: 410044908
+    <!-- BOATY TAB -->
+    <div id="cat-boaty-content" style="display:none">
+      <p class="subhead" style="margin-top:0">🐈 Boaty's Daily Routine</p>
+
+      <div class="callout callout-info" style="margin-bottom:12px">
+        <span class="callout-icon">ℹ</span>
+        <strong>Same routine every single day:</strong> Boaty eats her weight loss food and gets her treats throughout the day.
+      </div>
+
+      <div class="transport-block">
+        <div class="transport-title">Daily treats</div>
+        <div class="transport-option">
+          <span class="to-badge to-best">Morning & throughout day</span>
+          <span class="to-text"><strong>7 × Immune Support Lysine treats</strong> — smaller treats (immune support)</span>
+        </div>
+        <div class="transport-option">
+          <span class="to-badge to-fast">Scatter throughout</span>
+          <span class="to-text"><strong>2 × Calm & Confident treats</strong> — anxiety support treats</span>
+        </div>
+      </div>
+
+      <div class="callout callout-info" style="margin-top:12px">
+        <span class="callout-icon">💡</span>
+        You can scatter treats throughout the day or give with her meals. Don't mix them with Joanne's food or treats.
+      </div>
+
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠</span>
+        <strong>CRITICAL — Food bowl placement:</strong> Boaty WILL smack her food bowl off high surfaces. <strong>ALWAYS place her food bowl on the FLOOR or lowest possible surface.</strong> Never put it on tables, counters, or raised platforms — she will knock it off and make a mess!
+      </div>
+
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠</span>
+        <strong>Keep her food secured:</strong> Store her weight loss food in a secure location she can't access. Boaty is clever and will get into her food if she can reach it. Keep it locked away when you're not feeding her.
+      </div>
+
+      <!-- BOATY PHOTOS -->
+      <p class="subhead">📸 Reference photos</p>
+      <div style="display:grid;gap:10px;margin:12px 0 16px">
+        <div>
+          <p style="font-size:10px;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Boaty's medicines & treats</p>
+          <img src="Boaty-Medicines-Treats.jpg" alt="Boaty treats" style="width:100%;border-radius:10px;border:0.5px solid var(--border)">
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACTS (shown in both cat views) -->
+    <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border)">
+      <p class="subhead">📞 Emergency contacts</p>
+      <div style="font-size:13px;color:var(--ink-mid);line-height:2.2;padding:8px 0">
+        <strong>Kiel</strong> — Instagram <strong>@kprevenew</strong> · 602-284-8619<br>
+        <strong>Joanne's vet</strong> — Lovet Pet Health Care – Dobson Ranch · (480) 838-2503<br>
+        2917 S Dobson Rd #102, Mesa AZ 85202
+      </div>
     </div>
 
   </div>
@@ -2564,6 +2595,17 @@
   // ── DAY CARD TOGGLE ────────────────────────────────────────────────────────
   function toggle(id) {
     document.getElementById(id).classList.toggle('open');
+  }
+
+  // ── CAT SELECTOR (For Mom tab) ────────────────────────────────────────────
+  function selectCat(cat) {
+    // Update button states
+    document.getElementById('cat-joanne').classList.toggle('active', cat === 'joanne');
+    document.getElementById('cat-boaty').classList.toggle('active', cat === 'boaty');
+
+    // Show/hide content
+    document.getElementById('cat-joanne-content').style.display = cat === 'joanne' ? '' : 'none';
+    document.getElementById('cat-boaty-content').style.display = cat === 'boaty' ? '' : 'none';
   }
 
   // Collapse everything else, open For Mom, scroll to it
