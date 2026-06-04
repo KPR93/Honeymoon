@@ -2322,19 +2322,33 @@
 
     <!-- VIDEO -->
     <p class="subhead">🎥 Medication walk-through video</p>
-    <div class="mom-video-wrap" id="video-wrap">
-      <div class="mom-video-poster" onclick="loadMomVideo()">
-        <div class="mom-video-play">▶</div>
-        <div class="mom-video-label">Tap to watch — shows exactly how to give the medicine</div>
-      </div>
-      <video id="mom-video" controls playsinline style="display:none;width:100%;height:auto;border-radius:10px;background:#000"></video>
+    <div class="mom-video-wrap">
+      <video controls playsinline preload="metadata" style="width:100%;height:auto;border-radius:10px;background:#000">
+        <source src="joanne-meds-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <!-- BOATY -->
-    <p class="subhead">🐈 Boaty</p>
-    <div class="callout callout-info">
-      <span class="callout-icon">🐟</span>
-      Boaty doesn't need any medication — just make sure she gets <strong>her own food</strong>. She's on a weight loss diet so keep her food separate from Joanne's.
+    <p class="subhead">🐈 Boaty — food & treats</p>
+    <div class="callout callout-info" style="margin-bottom:8px">
+      <span class="callout-icon">🐱</span>
+      Boaty is on a weight loss diet — keep her food separate from Joanne's and don't let them eat each other's.
+    </div>
+    <div class="transport-block">
+      <div class="transport-title">Daily treat schedule</div>
+      <div class="transport-option">
+        <span class="to-badge to-best">Immune Support</span>
+        <span class="to-text"><strong>7 treats per day</strong> — smaller Lysine treats (immune support)</span>
+      </div>
+      <div class="transport-option">
+        <span class="to-badge to-fast">Calm & Confident</span>
+        <span class="to-text"><strong>2 treats per day</strong> — anxiety support treats</span>
+      </div>
+    </div>
+    <div class="callout callout-info" style="margin-top:8px">
+      <span class="callout-icon">💡</span>
+      Treats can be given throughout the day — scatter them or give with her meals. Don't mix them in with Joanne's food.
     </div>
 
     <!-- WHERE THINGS ARE -->
@@ -2342,7 +2356,8 @@
     <div style="font-size:13px;color:var(--ink-mid);line-height:2.2;padding:8px 0">
       🟢 Prednisolone (small squeeze bottle + big green refill) — kitchen counter<br>
       🔵 Cetirizine (small clear bottle) — kitchen counter<br>
-      🐈 Boaty's weight loss food — keep separate from Joanne's
+      🐈 Boaty's weight loss food — keep separate from Joanne's<br>
+      🟤 Boaty's treats: Immune Support Lysine (7/day) + Calm & Confident (2/day) — kitchen
     </div>
 
     <!-- PHOTOS -->
