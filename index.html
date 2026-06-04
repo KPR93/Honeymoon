@@ -2327,7 +2327,7 @@
         <div class="mom-video-play">▶</div>
         <div class="mom-video-label">Tap to watch — shows exactly how to give the medicine</div>
       </div>
-      <video id="mom-video" controls style="display:none;width:100%;border-radius:10px"></video>
+      <video id="mom-video" controls playsinline style="display:none;width:100%;height:auto;border-radius:10px;background:#000"></video>
     </div>
 
     <!-- BOATY -->
@@ -2662,7 +2662,8 @@
     video.src = 'joanne-meds-video.mp4';
     poster.style.display = 'none';
     video.style.display  = '';
-    video.play();
+    video.load();
+    video.addEventListener('canplay', () => video.play(), { once: true });
   }
 
   // ── PIN GATE ───────────────────────────────────────────────────────────────
