@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Honeymoon 2026">
 <title>Kiel & Mary — Mediterranean Honeymoon 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -1066,6 +1069,46 @@
     letter-spacing: 0.05em;
   }
   footer em { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); }
+
+  /* MOBILE OPTIMIZATIONS */
+  @media (max-width: 768px) {
+    body { font-size: 16px; }
+    .hero { padding: 48px 20px 32px; }
+    .hero-title { font-size: clamp(32px, 6vw, 48px); }
+    .countdown-block { padding: 10px 16px; }
+    .countdown-val { font-size: 36px; }
+    button, .pin-key, a.doc-card, .setsail-card, .day-card .day-header, .info-panel { min-height: 48px; display: flex; align-items: center; }
+    .top-nav { padding: 12px 8px; gap: 6px; font-size: 13px; }
+    .top-nav a { padding: 8px 12px; }
+    .day-header { padding: 14px 16px; }
+    .day-body { padding: 16px; }
+    .subhead { font-size: 13px; margin: 12px 0 8px; }
+    .info-panel { padding: 14px 16px; }
+    .transport-option { gap: 8px; font-size: 13px; padding: 8px 0; }
+    .pin-pad { gap: 6px; }
+    .pin-key { padding: 12px 0; font-size: 18px; }
+    input, textarea, select { font-size: 16px; padding: 12px; }
+    .action-item { padding: 12px 0; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 15px; }
+    .hero { padding: 36px 16px 24px; }
+    .hero-title { font-size: clamp(28px, 5vw, 40px); }
+    .countdown { gap: 0; }
+    .countdown-block { padding: 8px 12px; }
+    .countdown-val { font-size: 28px; }
+    .countdown-label { font-size: 9px; }
+    .section-label { font-size: 14px; margin: 16px 0 8px; }
+    .day-header { padding: 12px 14px; gap: 10px; }
+    .chevron { font-size: 14px; }
+    .day-icon { width: 32px; height: 32px; font-size: 16px; }
+    .top-nav { flex-wrap: wrap; }
+    .pin-pad { grid-template-columns: repeat(3, 1fr); }
+  }
+  @supports (padding: max(0px)) {
+    body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+    .hero { padding-top: max(48px, env(safe-area-inset-top)); padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+  }
 
   /* PRINT */
   @media print {
