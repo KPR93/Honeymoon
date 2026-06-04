@@ -2627,7 +2627,6 @@
     document.getElementById('tab-mom').style.display  = isTrip ? 'none' : '';
     document.getElementById('tab-btn-trip').classList.toggle('active', isTrip);
     document.getElementById('tab-btn-mom').classList.toggle('active', !isTrip);
-    document.querySelector('.top-nav').style.display = isTrip ? '' : 'none';
     window.scrollTo(0, 0);
   }
 
@@ -2696,6 +2695,23 @@
     const btn = document.getElementById('pin-content').querySelector('.pin-lock-btn');
     if (btn) btn.remove();
   }
+
+  // ── NAV LINKS: switch to trip tab before navigating ────────────────────────
+  document.querySelectorAll('.top-nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const tripVisible = document.getElementById('tab-trip').style.display !== 'none';
+      if (!tripVisible) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        switchTab('trip');
+        // Wait for tab to render then scroll
+        requestAnimationFrame(() => {
+          const el = document.querySelector(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    });
+  });
 
   // ── INIT ───────────────────────────────────────────────────────────────────
   loadNotes();
